@@ -1,0 +1,44 @@
+
+@import url(nav-bar.css);
+@import url(home.css);
+@import url(history.css);
+@import url(letters.css);
+@import url(videocall.css);
+@import url(follow-santa.css);
+@import url(games.css);
+@import url(gallery.css);
+@import url(lists.css);
+@import url(experience.css);
+@import url(footer.css);
+
+/* Paleta de color */
+:root{
+    --color-primary: #f23e02;
+    --color-secondary: #2c6b74;
+    --color-background: #013750;
+    --color-text: #fef5c8;
+    --color-button: #00988d;
+}
+
+*{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: var(--color-background);
+    color: #333;
+    box-sizing: border-box;
+    background-image: url('../images/snow_background.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+input[type="button"] {
+    cursor: pointer;
+}
+
