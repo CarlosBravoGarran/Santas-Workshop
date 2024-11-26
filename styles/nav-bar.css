@@ -236,14 +236,40 @@
     background-color: #d00a;
     position: relative;
     top: -200px;
-    transition: top 0.4s ease-in-out;
-    transition: display 0.4s ease-in-out;
+    transition: top 0.3s ease-in-out;
     border-radius: 8px;
 }
 
 .access_menu.open {
-    display: block;
     top: 0;
+}
+
+.access_logout {
+    display: none;
+    background-color: #d00a;
+    position: relative;
+    top: -200px;
+    transition: top 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+.access_logout.open {
+    top: 0;
+}
+
+.logout_button {
+    background-color: #ccc;
+    padding: 10px;
+    margin: 15px 15px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.logout_button:active {
+    box-shadow: inset 4px 4px 1px rgba(0, 0, 0, 0.2);
 }
 
 .access_register{

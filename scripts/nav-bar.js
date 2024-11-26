@@ -1,4 +1,3 @@
-
 // --- Menú Lateral ---
 const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
@@ -8,26 +7,21 @@ menuToggle?.addEventListener('click', () => {
     menu.classList.toggle('open');
 });
 
-
 // --- Barra de Búsqueda ---
 const searchContainer = document.querySelector('.search-bar');
 const searchIcon = document.querySelector('.search-icon');
 const searchInput = document.querySelector('.search-text');
 const suggestions = document.getElementById('suggestions');
 
-
 // Mostrar/Ocultar barra de búsqueda
 searchIcon?.addEventListener('click', () => {
     if (!searchContainer.classList.contains('active')) {
-        // Mostrar barra de búsqueda
         searchContainer.classList.add('active');
         searchInput.focus(); // Foco automático en la barra de búsqueda
     } else if (searchInput.value.trim()) {
-        // Si ya está activa y hay texto, navegar a la sección
         navigateToSection(searchInput.value.trim());
         closeSearchBar();
     } else {
-        // Si está activa pero no hay texto, cerrarla
         closeSearchBar();
     }
 });
@@ -125,10 +119,47 @@ function displayNoResults() {
 
 
 // --- Botones de Acceso ---
+
 const accessButton = document.querySelector('.access');
 const accessMenu = document.querySelector('.access_menu');
 
-accessButton?.addEventListener('click', () => {
-    accessMenu.classList.toggle('open');
-});
+// Verificar sesión activa
+function getActiveSession() {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    return users.find((u) => u.active === true);
+}
+
+function toggleMenus() {
+    const activeUser = getActiveSession();
+
+        if (activeUser) {
+            // Mostrar menú de logout si hay sesión iniciada
+            if (!logoutMenu.classList.contains('open')) {
+                logoutMenu.style.display = 'block';
+                setTimeout(() => {
+                    logoutMenu.classList.add('open');
+                }, 100);
+            } else {
+                logoutMenu.classList.remove('open');
+                setTimeout(() => {
+                    logoutMenu.style.display = 'none';
+                }, 100);
+            }
+        } else {
+            // Mostrar menú de acceso si no hay sesión iniciada
+            if (!accessMenu.classList.contains('open')) {
+                accessMenu.style.display = 'block';
+                setTimeout(() => {
+                    accessMenu.classList.add('open');
+                }, 100);
+            } else {
+                accessMenu.classList.remove('open');
+                setTimeout(() => {
+                    accessMenu.style.display = 'none';
+                }, 100);
+            }
+        }
+}
+
+accessButton?.addEventListener('click', (toggleMenus));
 

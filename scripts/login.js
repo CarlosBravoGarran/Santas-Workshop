@@ -1,9 +1,10 @@
-
-// --- Botón Login ---
 const loginButton = document.querySelector('.access_login');
 const loginPopup = document.querySelector('.login-popup');
 const loginForm = document.querySelector('.login_form');
 const closeLoginButton = document.querySelector('.login_close');
+const userMenu = document.querySelector('.user_menu');
+const logoutMenu = document.querySelector('.access_logout');
+const logoutButton = document.querySelector('.logout_button');
 
 // Abrir el formulario de login
 loginButton?.addEventListener('click', () => {
@@ -32,24 +33,59 @@ loginForm?.addEventListener('submit', (e) => {
 
     // Obtener usuarios de localStorage
     const users = JSON.parse(localStorage.getItem('users')) || [];
+    const userIndex = users.findIndex((u) => u.email === email);
 
-    // Buscar usuario por correo
-    const user = users.find((u) => u.email === email);
-
-    if (!user) {
+    if (userIndex === -1) {
         alert('Correo no registrado. Por favor, regístrate primero.');
         return;
     }
 
-    // Hashear la contraseña ingresada y compararla con la almacenada
+    const user = users[userIndex];
+
+    // Validar contraseña
     const hashedPassword = CryptoJS.SHA256(password).toString();
     if (user.password !== hashedPassword) {
         alert('Contraseña incorrecta.');
         return;
     }
 
+    // Actualizar sesión activa
+    users[userIndex].active = true;
+    localStorage.setItem('users', JSON.stringify(users));
+
     // Inicio de sesión exitoso
     alert(`¡Bienvenido, ${user.name}!`);
-    accessMenu.classList.remove('open'); // Cerrar menu de acceso
-    loginPopup.classList.remove('open'); // Cerrar el formulario
+
+    // Limpiar y cerrar el formulario
+    loginForm.reset();
+    loginPopup.classList.remove('open');
+    
+    // Cerrar menú
+    accessMenu.classList.remove('open');
+    setTimeout(() => {
+        accessMenu.style.display = 'none';
+    }, 100);
+    
 });
+
+// Cerrar sesión
+logoutButton?.addEventListener('click', logout);
+
+function logout() {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const activeUserIndex = users.findIndex((u) => u.active === true);
+
+    if (activeUserIndex !== -1) {
+        users[activeUserIndex].active = false;
+        localStorage.setItem('users', JSON.stringify(users));
+        
+        // Cerrar menú
+        logoutMenu.classList.remove('open');
+        setTimeout(() => {
+            logoutMenu.style.display = 'none';
+        }, 100);
+        
+        alert('Sesión cerrada correctamente.');
+    }
+}
+
