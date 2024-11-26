@@ -5,7 +5,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to bottom, #0005, #0000);
+    background: linear-gradient(to bottom, #0007, transparent);
     color: var(--color-text);
     position: fixed;
     top: 0;
@@ -55,7 +55,7 @@
 }
 
 .nav-bar_access{
-    width: clamp(3rem, 5vw, 6vw);
+    width: clamp(3rem, 3vw, 5vw);
     height: auto;
     border-radius: 50%;
     cursor: pointer;
