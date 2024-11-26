@@ -232,15 +232,17 @@
 }
 
 .access_menu {
-    display: block;
+    display: none;
     background-color: #d00a;
     position: relative;
     top: -200px;
     transition: top 0.4s ease-in-out;
+    transition: display 0.4s ease-in-out;
     border-radius: 8px;
 }
 
 .access_menu.open {
+    display: block;
     top: 0;
 }
 
