@@ -15,24 +15,60 @@
 <body>
     <header class="nav-bar">
         <div class="nav-bar_icons">
-            <div class="nav-bar_menu">=</div>
-            <img class="search-icon" src="images/search_icon.webp" alt="Icono lupa búsqueda">
+            <div class="menu-toggle">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+            </div>
+            <div class="search-bar">
+                <input type="text" class="search-text" placeholder="Buscar..." />
+                <img class="search-icon" src="images/search_icon.webp" alt="Icono lupa búsqueda">
+                <ul class="suggestions" id="suggestions"></ul>
+            </div>
+                
         </div>
         <div class="web-name">
-            <h2 class="web-name_text" >Navidad con Papá Noel</h2>
+            <h2><a class="web-name_text" href="#home">El taller de Papá Noel</a></h2>
             <img class="web-name_logo" src="images/logo.png" alt="Logo gorro de Papá Noél">
         </div>
-        <div>
-            <img class="nav-bar_access" src="images/profile_icon.webp" alt="Acceso a Inicio de Sesión o Registro">
+        <div class="nav-bar_access">
+            <div class="access_menu">
+                <button class="access_register">Unirme a los elfos</button>
+                <button class="access_login">Ya soy un elfo</button>
+            </div>
+            
+            <button class="access">
+                <img class="access_icon" src="images/profile_icon.webp" alt="Acceso a Inicio de Sesión o Registro">
+            </button>
+            <div class="register-popup">
+                <div class="register_close">x</div>
+                <form class="register_form">
+                    <label for="register-name">Nombre</label>
+                    <input type="text" id="register-name" name="register-name" placeholder="Tu nombre" required>
+                    <label for="register-email">Correo Electrónico</label>
+                    <input type="email" id="register-email" name="register-email" placeholder="email@ejemplo.com" required>
+                    <label for="register-password">Contraseña</label>
+                    <input type="password" id="register-password" name="register-password" placeholder="Tu contraseña" required>
+                    <label for="register-password-confirm">Confirmar Contraseña</label>
+                    <input type="password" id="register-password-confirm" name="register-password-confirm" placeholder="Repite tu contraseña" required>
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+            <div class="login-popup">
+                <div class="login_close">x</div>
+                <form class="login_form">
+                    <label for="login-email">Correo Electrónico</label>
+                    <input type="email" id="login-email" name="login-email" placeholder="email@ejemplo.com" required>
+                    <label for="login-password">Contraseña</label>
+                    <input type="password" id="login-password" name="login-password" placeholder="Tu contraseña" required>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
         </div>
-    </header>
-    <main>
         <div class="menu">
-            <div class="menu_close">x</div>
             <ul class="menu_list">
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#history">Historia</a></li>
-                <li><a href="#calendar">Calendario de Adviento</a></li>
+                <li><a href="#calendar">Calendario</a></li>
                 <li><a href="#follow-santa">Sigue a Santa</a></li>
                 <li><a href="#letters">Cartas</a></li>
                 <li><a href="#videocall">Videollamada</a></li>
@@ -44,6 +80,9 @@
                 <li><a href="#experience">Experiencia</a></li>
             </ul>
         </div>
+        
+    </header>
+    <main>
         <div id="home">
 
         </div>
@@ -54,7 +93,7 @@
             </div>
         </div>
         <div id="calendar">
-            <h2 class="title calendar_title">Calendario de Adviento</h2>
+            <h2 class="title calendar_title">Calendario</h2>
             <div class="content calendar_content">
                 
             </div>
@@ -117,5 +156,8 @@
     <footer class="footer">
 
     </footer>
+    <script src="scripts/nav-bar.js"></script>
+    <script src="scripts/register.js"></script>
+    <script src="scripts/login.js"></script>
 </body>
 </html>
