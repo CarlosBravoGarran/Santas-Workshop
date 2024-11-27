@@ -46,14 +46,14 @@
     gap: 10px;
 }
 
-#country-search {
+.country-search {
     padding: 5px;
     font-size: 14px;
     width: 200px;
     border-radius: 8px;
 }
 
-#search-btn {
+.search-btn {
     padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
@@ -63,15 +63,15 @@
     box-shadow: 4px 4px 1px rgba(200, 0, 0);
 }
 
-#search-btn:hover {
+.search-btn:hover {
     background-color: #e00;
 }
 
-#search-btn:active {
+.search-btn:active {
     box-shadow: inset 4px 4px 1px rgba(200, 0, 0);
 }
 
-#locate-santa-btn {
+.locate-santa-btn {
     padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
@@ -81,10 +81,10 @@
     box-shadow: 4px 4px 1px #4c9c68;
 }
 
-#locate-santa-btn:hover {
+.locate-santa-btn:hover {
     background-color: #4cbc68;
 }
 
-#locate-santa-btn:active {
+.locate-santa-btn:active {
     box-shadow: inset 4px 4px 1px #4c9c68;
 }

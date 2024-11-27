@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Evento del botón de búsqueda
-    document.getElementById('search-btn').addEventListener('click', async () => {
-        const country = document.getElementById('country-search').value.trim();
+    document.querySelector('.search-btn').addEventListener('click', async () => {
+        const country = document.querySelector('.country-search').value.trim();
         if (!country) {
             alert('Por favor, escribe un país.');
             return;
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Botón para ubicar a Santa en el mapa
-    document.getElementById('locate-santa-btn').addEventListener('click', () => {
+    document.querySelector('.locate-santa-btn').addEventListener('click', () => {
         const santaCoords = santaMarker.getLatLng(); // Coordenadas actuales del icono
         map.setView(santaCoords, 5); // Centra el mapa en el icono y ajusta el zoom
     });
