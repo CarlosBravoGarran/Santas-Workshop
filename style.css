@@ -13,3 +13,4 @@
 @import url('styles/gallery.css');
 @import url('styles/experience.css');
 @import url('styles/footer.css');
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");

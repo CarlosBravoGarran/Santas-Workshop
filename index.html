@@ -9,6 +9,7 @@
     <meta name="author" content="Carlos Bravo, Luis Gandarillas, Íñigo Garcia-Velasco y Olivia Grima">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="icon" href="images/icon.png" type="image/png">
 </head>
 </head>
@@ -100,12 +101,21 @@
                 
             </div>
         </div>
+
         <div id="follow-santa">
             <h2 class="title follow-santa_title">Sigue a Santa</h2>
             <div class="content follow-santa_content">
-
+                <div class="search-container">
+                    <input type="text" id="country-search" placeholder="Escribe un país" />
+                    <button id="search-btn">Calcular distancia</button>
+                    <button id="locate-santa-btn">¿Dónde está Santa?</button>
+                </div>
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
             </div>
         </div>
+
         <div id="letters">
             <h2 class="title letters_title">Cartas</h2>
             <div class="content letters_content">
@@ -175,9 +185,12 @@
 
     </footer>
     <script src="scripts/nav-bar.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="scripts/register.js"></script>
     <script src="scripts/login.js"></script>
     <script src="scripts/videocall.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="scripts/follow-santa.js"></script>
+
 </body>
 </html>
