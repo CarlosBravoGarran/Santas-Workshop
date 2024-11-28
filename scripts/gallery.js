@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Centrar la imagen activa
-        const baseOffset = -(currentIndex * itemWidth) + (carousel.offsetWidth - itemWidth) / 2 -25;
+        const baseOffset = -(currentIndex * itemWidth) + (carousel.offsetWidth - itemWidth) / 2 -27;
         const offset = applyInitialOffset && !initialOffsetApplied
             ? baseOffset + 25 // Centrar imagen inicial
             : baseOffset;

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const captureBtn = document.querySelector('.capture_btn');
     const savePhotoBtn = document.querySelector('.save-photo_btn');
     const photoContainer = document.querySelector('.photo_container');
+    const darkOverlay = document.querySelector('.camera_dark-overlay');
 
     let stream; // Guardar el stream de la cámara
 
@@ -18,10 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
     guideCanvas.style.zIndex = '10';
     cameraPopup.appendChild(guideCanvas);
 
+    // Función para verificar si el canvas está vacío
+    function isCanvasEmpty(canvas) {
+        const ctx = canvas.getContext('2d');
+        const pixelData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+        return !pixelData.some((value) => value !== 0); // Verifica si todos los píxeles son transparentes
+    }
+
     // Abrir el popup de la cámara y activar la cámara
     openCameraBtn.addEventListener('click', async () => {
         try {
             cameraPopup.style.display = 'flex';
+            darkOverlay.style.display = 'block';
 
             stream = await navigator.mediaDevices.getUserMedia({
                 video: { facingMode: 'user' }, // Cámara frontal
@@ -35,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             drawFaceGuide(guideCanvas); // Dibujar el círculo guía
 
+            // Deshabilitar el botón de guardar si el canvas está vacío
+            savePhotoBtn.disabled = isCanvasEmpty(popupCanvas);
         } catch (error) {
             console.error('Error al acceder a la cámara:', error);
             alert('No se pudo acceder a la cámara.');
@@ -49,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const centerX = canvas.width / 1.7;
         const centerY = canvas.height / 1.7;
-        const radius = canvas.width * 0.2; 
+        const radius = canvas.width * 0.2;
 
         ctx.beginPath();
         ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
@@ -58,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.stroke();
     }
 
-    // Hcer foto
+    // Tomar foto
     captureBtn.addEventListener('click', () => {
         const ctx = popupCanvas.getContext('2d');
 
@@ -70,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.drawImage(cameraFeed, 0, 0, popupCanvas.width, popupCanvas.height);
         ctx.setTransform(1, 0, 0, 1, 0, 0); // Restablecer transformación
 
+        // Habilitar el botón de guardar
+        savePhotoBtn.disabled = isCanvasEmpty(popupCanvas);
     });
 
     // Guardar foto
@@ -102,12 +115,13 @@ document.addEventListener('DOMContentLoaded', () => {
             img.style.height = '100%';
 
             // Agregar la imagen al contenedor final
-            photoContainer.innerHTML = ''; // Limpiar imágenes previas
+            photoContainer.innerHTML = '';
             photoContainer.appendChild(img);
 
             // Detener la cámara y cerrar el popup
             stream.getTracks().forEach((track) => track.stop());
             cameraPopup.style.display = 'none';
+            darkOverlay.style.display = 'none';
         };
     });
 
@@ -115,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (event) => {
         if (!cameraPopup.contains(event.target) && event.target !== openCameraBtn) {
             cameraPopup.style.display = 'none';
+            darkOverlay.style.display = 'none';
 
             if (stream) {
                 stream.getTracks().forEach((track) => track.stop());

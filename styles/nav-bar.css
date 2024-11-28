@@ -444,6 +444,19 @@
     cursor: pointer;
 }
 
+/* Fondo oscuro para el popup */
+.login_dark-overlay, .register_dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; /* Oculto por defecto */
+}
+
+
+
 /*Responsive*/
 
 @media (max-width: 600px) {
