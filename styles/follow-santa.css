@@ -35,8 +35,8 @@
     max-width: 1000px;
     border-radius: inherit;
     box-sizing: border-box;
-    position: relative; /* O static si no necesitas posicionamiento */
-    z-index: 0; /* Asegúrate de que no tenga un índice alto */
+    position: relative;
+    z-index: 0;
 }
 
 

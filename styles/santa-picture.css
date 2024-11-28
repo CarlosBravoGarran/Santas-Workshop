@@ -39,6 +39,7 @@
     background-color: #ccc;
     border-radius: 30px;
     box-shadow: 4px 4px 1px rgba(0, 0, 0);
+    cursor: pointer;
 }
 
 .open-camera_btn:active{
@@ -65,16 +66,16 @@
     width: 90%; 
     height: 90%;
     overflow: hidden;
-    position: relative; /* Necesario si usas positioning en la imagen */
+    position: relative;
     display: flex;
-    justify-content: center; /* Opcional: Centrar horizontalmente */
-    align-items: center; /* Opcional: Centrar verticalmente */
+    justify-content: center;
+    align-items: center;
     margin: 20px 0;
 }
 
 .photo_container img {
-    width: auto; /* Mantiene la proporción de la imagen */
-    height: 100%; /* Asegura que la altura ocupe todo el contenedor */
+    width: auto;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -135,6 +136,7 @@
     border-radius: 30px;
     box-shadow: 4px 4px 1px rgba(0, 0, 0);
     padding: 10px;
+    cursor: pointer;
 }
 
 .capture_btn:active{
@@ -150,6 +152,7 @@
     background-color: #0f0;
     border-radius: 30px;
     box-shadow: 4px 4px 1px rgba(0, 0, 0);
+    cursor: pointer;
 }
 
 .save-photo_btn:active{

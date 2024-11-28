@@ -83,7 +83,10 @@
                 <li><a href="#experience">Experiencia</a></li>
             </ul>
         </div>
-        
+        <script src="scripts/nav-bar.js"></script>
+        <script src="scripts/register.js"></script>
+        <script src="scripts/login.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     </header>
     <main>
         <div id="home">
@@ -114,6 +117,8 @@
                     <div id="map"></div>
                 </div>
             </div>
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            <script src="scripts/follow-santa.js"></script>
         </div>
 
         <div id="letters">
@@ -143,12 +148,15 @@
             <div class="videocall_camara">
 
             </div>
+            <script src="scripts/videocall.js"></script>
         </div>
+
         <div id="elf-name">
             <h2 class="title elf-name_title">Tu Nombre de Elfo</h2>
             <div class="content elf-name_content">
 
             </div>
+            
         </div>
         <div id="santa-picture">
             <h2 class="title santa-picture_title">Conviertete en Elfo</h2>
@@ -174,43 +182,58 @@
                     </div>
                 </div>       
             </div>
+            <script src="scripts/santa-picture.js"></script>
         </div>
+
         <div id="lists">
             <h2 class="title lists_title">Las Listas</h2>
             <div class="content lists_content">
 
             </div>
         </div>
+
         <div id="games">
             <h2 class="title games_title">Juegos</h2>
             <div class="content games_content">
 
             </div>
         </div>
+
         <div id="gallery">
             <h2 class="title gallery_title">Galería</h2>
             <div class="content gallery_content">
-
+                <button class="gallery_arrow gallery_arrow--left">&lt;</button>
+                <div class="gallery_carrousel">
+                    <div class="gallery_items">
+                        <img src="images/laponia.jpg" alt="Photo 1" class="gallery_item">
+                        <img src="images/laponia.jpg" alt="Photo 2" class="gallery_item">
+                        <img src="images/laponia.jpg" alt="Photo 3" class="gallery_item">
+                        <img src="images/laponia.jpg" alt="Photo 4" class="gallery_item">
+                        <img src="images/laponia.jpg" alt="Photo 5" class="gallery_item">
+                        <img src="images/laponia.jpg" alt="Photo 6" class="gallery_item">
+                        <img src="images/laponia.jpg" alt="Photo 7" class="gallery_item">
+                        <img src="images/laponia.jpg" alt="Photo 8" class="gallery_item">
+                        <img src="images/laponia.jpg" alt="Photo 9" class="gallery_item">
+                    </div>
+                </div>
+                <button class="gallery_arrow gallery_arrow--right">&gt;</button>
             </div>
+            <script src="scripts/gallery.js"></script>
+
         </div>
+        
+
         <div id="experience">
             <h2 class="title experience_title">Experiencia</h2>
             <div class="content experience_content">
 
             </div>
         </div>
+        <script src="scripts/main.js"></script>
     </main>
+
     <footer class="footer">
 
     </footer>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/nav-bar.js"></script>
-    <script src="scripts/register.js"></script>
-    <script src="scripts/login.js"></script>
-    <script src="scripts/videocall.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="scripts/follow-santa.js"></script>
-    <script src="scripts/santa-picture.js"></script>
 </body>
 </html>
