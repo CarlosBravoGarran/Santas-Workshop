@@ -151,9 +151,28 @@
             </div>
         </div>
         <div id="santa-picture">
-            <h2 class="title santa-picture_title">Foto con Papá Noel</h2>
+            <h2 class="title santa-picture_title">Conviertete en Elfo</h2>
             <div class="content santa-picture_content">
-                
+                <div class="santa_selfie">
+                    <div class="selfie_info">
+                        <h3 class="selfie_title">¡Conviertete en un elfo de Papá Noel!</h3>
+                        <p class="selfie_text">Haz clic en el botón para abrir la cámara y centra tu cabeza en el círculo</p>
+                        <button class="open-camera_btn">Abrir cámara</button>
+                    </div>
+                    <div class="photo">
+                        <div class="photo_container"></div>
+                    </div>
+                </div>
+                <div class="selfie_popup">
+                    <div class="selfie_camera">
+                        <video class="camera_feed" autoplay playsinline></video>
+                        <canvas class="camera_canvas"></canvas>
+                    </div>
+                    <div class="camera_controls">
+                        <button class="capture_btn">Tomar foto</button>
+                        <button class="save-photo_btn">Usar esta foto</button>
+                    </div>
+                </div>       
             </div>
         </div>
         <div id="lists">
@@ -191,6 +210,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="scripts/follow-santa.js"></script>
-
+    <script src="scripts/santa-picture.js"></script>
 </body>
 </html>
