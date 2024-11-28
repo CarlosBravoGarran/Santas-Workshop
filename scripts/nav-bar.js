@@ -35,7 +35,7 @@ const sections = [
     "Cartas",
     "Videollamada",
     "Tu Nombre de Elfo",
-    "Foto con Papá Noel",
+    "Conviertete en Elfo",
     "Las Listas",
     "Juegos",
     "Galería",

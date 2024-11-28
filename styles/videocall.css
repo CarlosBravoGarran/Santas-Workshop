@@ -45,6 +45,14 @@
     border-radius: 15px;
 }
 
+.videocall_message_title{
+    font-size: clamp(1.5rem, 2vw, 3rem);
+}
+
+.videocall_message_text{
+    font-size: clamp(1.2rem, 1.5vw, 2rem);
+}
+
 .videocall_screen video{
     width: 90%;
     height: 90%;
