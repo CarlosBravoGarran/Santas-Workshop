@@ -1,7 +1,7 @@
-/* Contenedor principal */
+
 #calendar {
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: var(--color-background-box);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,7 +9,6 @@
     padding: 20px;
 }
 
-/* Contenedor de los días */
 .calendar-container {
     display: flex;
     flex-wrap: wrap; 
@@ -20,7 +19,6 @@
     max-width: 1200px;
 }
 
-/* Estilo de cada día */
 .calendar-day {
     flex: 1 0 calc(20% - 10px); /* Cada día ocupa 20% del contenedor menos el espacio del gap */
     height: 120px; 
