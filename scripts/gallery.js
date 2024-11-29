@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let itemWidth = items[0].offsetWidth + 20; // Ancho de cada imagen + margen
     let initialOffsetApplied = false; // Ajuste inicial para centrar imagen
 
+    let startX = 0; // Posición inicial del toque
+    let endX = 0; // Posición final del toque
+
     function updateCarousel(applyInitialOffset = false) {
         // Actualizar clases de posición (active, left, right)
         items.forEach((item, index) => {
@@ -23,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Centrar la imagen activa
-        const baseOffset = -(currentIndex * itemWidth) + (carousel.offsetWidth - itemWidth) / 2 -27;
+        const baseOffset = -(currentIndex * itemWidth) + (carousel.offsetWidth - itemWidth) / 2 - 27;
         const offset = applyInitialOffset && !initialOffsetApplied
             ? baseOffset + 25 // Centrar imagen inicial
             : baseOffset;
@@ -35,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    //Mover a la izquierda
+    // Mover a la izquierda
     prevArrow.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + items.length) % items.length;
         updateCarousel();
@@ -47,5 +50,33 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarousel();
     });
 
+    // Detectar gestos de deslizamiento
+    carousel.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX; // Guardar posición inicial
+    });
+
+    carousel.addEventListener('touchmove', (event) => {
+        endX = event.touches[0].clientX; // Actualizar posición final durante el movimiento
+    });
+
+    carousel.addEventListener('touchend', () => {
+        const deltaX = endX - startX; // Diferencia entre inicio y final del toque
+
+        if (deltaX > 50) {
+            // Deslizar hacia la derecha
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updateCarousel();
+        } else if (deltaX < -50) {
+            // Deslizar hacia la izquierda
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+        }
+
+        // Reiniciar las posiciones
+        startX = 0;
+        endX = 0;
+    });
+
+    // Inicializar el carrusel centrado
     updateCarousel(true);
 });
