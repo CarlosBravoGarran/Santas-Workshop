@@ -1,7 +1,7 @@
 
 #games{
     height: 100vh;
-    background-color: #aaf;
+    background-color: var(--color-background-global);
     display: flex;
     flex-direction: column;
     align-items: center;

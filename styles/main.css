@@ -1,10 +1,18 @@
 /* Paleta de color */
 :root{
-    --color-primary: #f23e02;
-    --color-secondary: #2c6b74;
-    --color-background: #013750;
-    --color-text: #fef5c8;
-    --color-button: #00988d;
+    --color-text1: #F3F2F2;
+    --color-text2: #2F2223;
+    --color-background-global: #251819;
+    --color-background-amarillento: #e4e7ba;
+    --color-background-box: #403234c2; 
+    --color-background-box2: #dc3846dc;
+    --color-text-oscuro: #383131;
+    --color-button1: #85A021;
+    --color-button2: #dc3846ea;
+    --color-button3: #2cc55d;
+    --color-button4: #ccc;
+    --color-cursor: #FF4;
+    --color-popup: #eae9b6c2;
 }
 
 *{
@@ -17,7 +25,7 @@
     position: absolute;
     width: 5px;
     height: 5px;
-    background-color: #ff4;
+    background-color: var(--color-cursor);
     border-radius: 50%;
     pointer-events: none;
     animation: fadeOut 1.5s forwards;
@@ -38,8 +46,8 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: var(--color-background);
-    color: #333;
+    background-color: var(--color-background-global);
+    color: var(--color-text1);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -55,7 +63,7 @@ input[type="button"] {
     justify-self: center;
     align-items: center;
     font-size: 2rem;
-    color: #000;
+    color: var(--color-text1);
     padding-top: 10vh;
     margin: 0;
 
