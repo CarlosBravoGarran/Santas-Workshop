@@ -1,8 +1,52 @@
-
-#calendar{
+/* Contenedor principal */
+#calendar {
     height: 100vh;
     background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Contenedor de los días */
+.calendar-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Estilo de cada día */
+.calendar-day {
+    flex: 1 0 calc(20% - 10px); /* Cada día ocupa 20% del contenedor menos el espacio del gap */
+    height: 120px; 
+    max-width: 120px;
+    background-color: #0077b6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-day:hover {
+    background-color: #00b4d8;
+    transform: rotateX(45deg);
+    transform-origin: top;
+    box-shadow: 0px 30px 20px -8px rgba(0, 0, 0);
+}
+
+.calendar-day.opened {
+    text-decoration: line-through;
+    cursor: default;
+    pointer-events: none;
+    transform: rotateX(105deg);
+    transform-origin: top;
 }
