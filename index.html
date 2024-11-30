@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="icon" href="images/icon.png" type="image/png">
+    <script src="scripts/elf-name.js"></script> 
 </head>
 </head>
 <body>
@@ -156,7 +157,19 @@
         <div id="elf-name">
             <h2 class="title elf-name_title">Tu Nombre de Elfo</h2>
             <div class="content elf-name_content">
-
+                <div class = "elf-name_info">
+                    <h3 class="elf-name_info_title">¡Descubre tu nombre de elfo!</h3>
+                    <p class="elf-name_info_text">Introduce tu nombre y descubre cuál sería tu nombre si fueras un elfo de Papá Noel</p>
+                    <div class="elf-name_form">
+                        <label for="elf-name_input">Introduce tu nombre</label>
+                        <input type="text" id="elf-name_input" name="elf-name_input" placeholder="Tu nombre" required>
+                        <button class="elf-name_button" onclick="generateElfName()">Generar nombre de elfo</button>
+                    </div>
+                    <div class="elf-name_result">
+                        <h3 class="elf-name_result_title">Tu nombre de elfo es:</h3>
+                        <p class="elf-name_result_class" id = "elf-name_result"></p>
+                    </div>
+                </div>
             </div>
             
         </div>
@@ -191,7 +204,10 @@
         <div id="lists">
             <h2 class="title lists_title">Las Listas</h2>
             <div class="content lists_content">
+                <p class="search_lists"> Busca tu nombre en la lista de Papá Noel</p>
+                <div class="lists_container">
 
+                </div>
             </div>
         </div>
 
