@@ -1,6 +1,4 @@
-  
 document.addEventListener('DOMContentLoaded', () => {
-
     const loginButton = document.querySelector('.access_login');
     const loginPopup = document.querySelector('.login-popup');
     const loginForm = document.querySelector('.login_form');
@@ -8,6 +6,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoutMenu = document.querySelector('.access_logout');
     const logoutButton = document.querySelector('.logout_button');
     const darkOverlay = document.querySelector('.login_dark-overlay');
+    const accessMenuButton = document.querySelector('.access_icon');
+    const accessMenu = document.querySelector('.access_menu');
+    const loggedIconButton = document.querySelector('.logged_icon');
+
+    // Asegurar que la sesión esté cerrada al cargar la página
+    const resetSessions = () => {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const updatedUsers = users.map(user => ({ ...user, active: false }));
+        localStorage.setItem('users', JSON.stringify(updatedUsers));
+
+        // Mostrar el botón de acceso y ocultar el botón de usuario conectado
+        accessMenuButton.style.display = 'inline-block';
+        loggedIconButton.style.display = 'none';
+    };
+
+    resetSessions();
 
     // Abrir el formulario de login
     loginButton?.addEventListener('click', () => {
@@ -19,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeLoginButton?.addEventListener('click', () => {
         loginPopup.classList.remove('open');
         darkOverlay.style.display = 'none';
+        loginForm.reset();
     });
 
     // Cerrar el formulario de login al hacer clic fuera
@@ -26,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!loginPopup.contains(e.target) && !loginButton.contains(e.target)) {
             loginPopup.classList.remove('open');
             darkOverlay.style.display = 'none';
+            loginForm.reset();
         }
     });
 
@@ -42,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const userIndex = users.findIndex((u) => u.email === email);
 
         if (userIndex === -1) {
-            alert('Correo no registrado. Por favor, regístrate primero.');
+            showNotification('Correo no registrado. Por favor, regístrate primero.', 'warning');
             return;
         }
 
@@ -51,33 +67,29 @@ document.addEventListener('DOMContentLoaded', () => {
         // Validar contraseña
         const hashedPassword = CryptoJS.SHA256(password).toString();
         if (user.password !== hashedPassword) {
-            alert('Contraseña incorrecta.');
+            showNotification('Contraseña incorrecta. Por favor, intentalo de nuevo.', 'error');
             return;
         }
 
         // Actualizar sesión activa
         users[userIndex].active = true;
         localStorage.setItem('users', JSON.stringify(users));
+        showNotification(`¡Bienvenido, ${user.name}!`, 'success');
 
-        // Inicio de sesión exitoso
-        alert(`¡Bienvenido, ${user.name}!`);
+        darkOverlay.style.display = 'none';
 
         // Limpiar y cerrar el formulario
         loginForm.reset();
         loginPopup.classList.remove('open');
-        
-        // Cerrar menú
-        accessMenu.classList.remove('open');
-        setTimeout(() => {
-            accessMenu.style.display = 'none';
-        }, 100);
-        
+
+        // Cambiar el botón de acceso al menú por el botón de usuario conectado
+        accessMenuButton.style.display = 'none';
+        accessMenu.style.display = 'none';
+        loggedIconButton.style.display = 'inline-block';
     });
 
     // Cerrar sesión
-    logoutButton?.addEventListener('click', logout);
-
-    function logout() {
+    logoutButton?.addEventListener('click', () => {
         const users = JSON.parse(localStorage.getItem('users')) || [];
         const activeUserIndex = users.findIndex((u) => u.active === true);
 
@@ -91,8 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 logoutMenu.style.display = 'none';
             }, 100);
             
-            alert('Sesión cerrada correctamente.');
-        }
-    }
+            showNotification('Sesión cerrada correctamente.', 'success');
 
-  });
+            // Cambiar el botón de usuario conectado por el botón de acceso al menú
+            loggedIconButton.style.display = 'none';
+            accessMenuButton.style.display = 'inline-block'; // Mostrar botón de acceso al menú
+        }
+    });
+});

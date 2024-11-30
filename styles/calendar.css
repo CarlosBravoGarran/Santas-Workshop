@@ -35,7 +35,7 @@
 }
 
 .calendar-day{
-    flex: 1 0 calc(20% - 20px); /* Cada día ocupa 20% del contenedor menos el espacio del gap */
+    flex: 1 0 calc(20% - 20px); /* Cada día ocupa 20% del contenedor menos el gap */
     height: 120px; 
     max-width: 120px;
     background-color: var(--color-background-amarillento);
@@ -71,14 +71,12 @@
 }
 
 .calendar-tab.locked {
-    background-color: #ccc;
     color: #666;
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
 }
 .calendar-tab.locked:hover {
-    background-color: #ccc;
     transform: none;
 }
 
@@ -129,7 +127,12 @@
     margin-top: 20px;
 }
 
-/* Animación para abrir el popup */
+.popup-text.blocked {
+    color: red; 
+    font-weight: bold;
+}
+
+
 @keyframes popupOpen {
     from {
         transform: scale(0.8);

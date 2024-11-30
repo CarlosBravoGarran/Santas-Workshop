@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="icon" href="images/icon.png" type="image/png">
+    <script src="scripts/elf-name.js"></script> 
 </head>
 </head>
 <body>
@@ -41,18 +42,27 @@
             </div>
             <button class="access">
                 <img class="access_icon" src="images/profile_icon.webp" alt="Acceso a Inicio de Sesión o Registro">
+                <img class="logged_icon" src="images/logged_icon.webp" alt="Cerrar Sesión">
             </button>
             <div class="register-popup">
                 <div class="register_close">x</div>
                 <form class="register_form">
-                    <label for="register-name">Nombre</label>
-                    <input type="text" id="register-name" name="register-name" placeholder="Tu nombre" required>
-                    <label for="register-email">Correo Electrónico</label>
-                    <input type="email" id="register-email" name="register-email" placeholder="email@ejemplo.com" required>
-                    <label for="register-password">Contraseña</label>
-                    <input type="password" id="register-password" name="register-password" placeholder="Tu contraseña" required>
-                    <label for="register-password-confirm">Confirmar Contraseña</label>
-                    <input type="password" id="register-password-confirm" name="register-password-confirm" placeholder="Repite tu contraseña" required>
+                    <div class="form-group">
+                        <input class="input" type="text" id="register-name" name="register-name" required>
+                        <label class="label" for="register-name">Nombre</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="input" type="email" id="register-email" name="register-email" required>
+                        <label class="label" for="register-email">Correo Electrónico</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="input" type="password" id="register-password" name="register-password" required>
+                        <label class="label" for="register-password">Contraseña</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="input" type="password" id="register-password-confirm" name="register-password-confirm" required>
+                        <label class="label" for="register-password-confirm">Confirmar Contraseña</label>
+                    </div>
                     <button type="submit">Registrarse</button>
                 </form>
             </div>
@@ -60,10 +70,14 @@
             <div class="login-popup">
                 <div class="login_close">x</div>
                 <form class="login_form">
-                    <label for="login-email">Correo Electrónico</label>
-                    <input type="email" id="login-email" name="login-email" placeholder="email@ejemplo.com" required>
-                    <label for="login-password">Contraseña</label>
-                    <input type="password" id="login-password" name="login-password" placeholder="Tu contraseña" required>
+                    <div class="form-group">
+                        <input class="input" type="email" id="login-email" name="login-email" required>
+                        <label class="label" for="login-email">Correo Electrónico</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="input" type="password" id="login-password" name="login-password" required>
+                        <label class="label" for="login-password">Contraseña</label>
+                    </div>
                     <button type="submit">Iniciar Sesión</button>
                 </form>
             </div>
@@ -91,6 +105,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     </header>
     <main>
+        <div id="notification-container"></div>
+
         <div id="home">
 
         </div>
@@ -112,76 +128,77 @@
                 <div class="calendar-container">
                     <!-- Genera los días del calendario -->
                     <div class="calendar-day">
-                        <div class="calendar-tab" data-day="1">1</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="2">2</div>
+                        <div class="calendar-tab" data-day="17">17</div>
                     </div>
                     <div class="calendar-day">
                         <div class="calendar-tab" data-day="3">3</div>
                     </div>
                     <div class="calendar-day">
-                        <div class="calendar-tab" data-day="4">4</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="5">5</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="6">6</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="7">7</div>
+                        <div class="calendar-tab" data-day="12">12</div>
                     </div>
                     <div class="calendar-day">
                         <div class="calendar-tab" data-day="8">8</div>
                     </div>
                     <div class="calendar-day">
-                        <div class="calendar-tab" data-day="9">9</div>
+                        <div class="calendar-tab" data-day="24">24</div>
                     </div>
                     <div class="calendar-day">
-                        <div class="calendar-tab" data-day="10">10</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="11">11</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="12">12</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="13">13</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="14">14</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="15">15</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="16">16</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="17">17</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="18">18</div>
-                    </div>
-                    <div class="calendar-day">
-                        <div class="calendar-tab" data-day="19">19</div>
+                        <div class="calendar-tab" data-day="5">5</div>
                     </div>
                     <div class="calendar-day">
                         <div class="calendar-tab" data-day="20">20</div>
                     </div>
                     <div class="calendar-day">
-                        <div class="calendar-tab" data-day="21">21</div>
+                        <div class="calendar-tab" data-day="1">1</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="15">15</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="10">10</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="6">6</div>
                     </div>
                     <div class="calendar-day">
                         <div class="calendar-tab" data-day="22">22</div>
                     </div>
                     <div class="calendar-day">
+                        <div class="calendar-tab" data-day="13">13</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="2">2</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="19">19</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="4">4</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="21">21</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="9">9</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="18">18</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="7">7</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="11">11</div>
+                    </div>
+                    <div class="calendar-day">
                         <div class="calendar-tab" data-day="23">23</div>
                     </div>
                     <div class="calendar-day">
-                        <div class="calendar-tab" data-day="24">24</div>
+                        <div class="calendar-tab" data-day="14">14</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-tab" data-day="16">16</div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -243,7 +260,19 @@
         <div id="elf-name">
             <h2 class="title elf-name_title">Tu Nombre de Elfo</h2>
             <div class="content elf-name_content">
-
+                <div class = "elf-name_info">
+                    <h3 class="elf-name_info_title">¡Descubre tu nombre de elfo!</h3>
+                    <p class="elf-name_info_text">Introduce tu nombre y descubre cuál sería tu nombre si fueras un elfo de Papá Noel</p>
+                    <div class="elf-name_form">
+                        <label for="elf-name_input">Introduce tu nombre</label>
+                        <input type="text" id="elf-name_input" name="elf-name_input" placeholder="Tu nombre" required>
+                        <button class="elf-name_button" onclick="generateElfName()">Generar nombre de elfo</button>
+                    </div>
+                    <div class="elf-name_result">
+                        <h3 class="elf-name_result_title">Tu nombre de elfo es:</h3>
+                        <p class="elf-name_result_class" id = "elf-name_result"></p>
+                    </div>
+                </div>
             </div>
             
         </div>
@@ -278,17 +307,67 @@
         <div id="lists">
             <h2 class="title lists_title">Las Listas</h2>
             <div class="content lists_content">
+                <p class="search_lists"> Busca tu nombre en la lista de Papá Noel</p>
+                <div class="lists_container">
 
+                </div>
             </div>
         </div>
 
         <div id="games">
             <h2 class="title games_title">Juegos</h2>
             <div class="content games_content">
+                <div class="game_buttons">
+                    <div class="close-game_btn">Cerrar Juego</div>
+                    <div class="game_btn game1_btn">Juego 1</div>
+                    <div class="game_btn game2_btn">Juego 2</div>
+                    <div class="game_btn game3_btn">Juego 3</div>
+                </div>
+                <div class="game_container">
+                    <div id="game1" class="game">
+                        <div class="game1_instructions">
+                            <h3 class="game1_title">¡Decora tu galleta de Navidad!</h3>
+                            <p class="game1_text">Arrastra los accesorios a la galleta para decorarla. <br> <br> Eliminalos haciendo click sobre ellos</p>
+                        </div>
+                        <div class="accessories">
+                            <!-- Accesorios disponibles para arrastrar -->
+                            <div class="accessory" draggable="true">
+                                <img class="acc-img" src="images/chip.png" alt="Chip de chocolate" />
+                            </div>
+                            <div class="accessory" draggable="true" data-accesory="tree">
+                                <img class="acc-img" src="images/tree.png" alt="Arbol de galleta" />
+                            </div>
+                            <div class="accessory" draggable="true">
+                                <img class="acc-img" src="images/white-star.png" alt="Estrella blanca de galleta" />
+                            </div>
+                        </div>
+                        <div class="gingerbread">
+                                <img src="images/cookie.webp" alt="Galleta base" />
+                        </div>
+                        <div class="accessories">
+                            <div class="accessory" draggable="true">
+                                <img class="acc-img" src="images/star.png" alt="Estrella de galleta" />
+                            </div>
+                            <div class="accessory" draggable="true">
+                                <img class="acc-img" src="images/green-gum.png" alt="Golosina verde" />
+                            </div>
+                            <div class="accessory" draggable="true">
+                                <img class="acc-img" src="images/red-gum.png" alt="Golosina roja" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="game2" class="game">
+                
+                    </div>
+                    <div id="game3" class="game">
 
+                    </div>
+                </div>
             </div>
+            <script src="scripts/games.js"></script>
+            <script src="scripts/game1.js"></script>
         </div>
-
+            
         <div id="gallery">
             <h2 class="title gallery_title">Galería</h2>
             <div class="content gallery_content">

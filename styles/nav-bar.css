@@ -86,6 +86,7 @@
     height: 25px;
     cursor: pointer;
     z-index: 101;
+    margin: 0 15px ;
 }
 
 .menu-toggle .line {
@@ -107,11 +108,10 @@
 
 .search-bar {
     display: flex;
-    align-items: center;
+    align-items: start;
     position: relative;
     width: auto;
     height: 40px;
-    margin-left: 15px
 }
 
 .search-text {
@@ -127,6 +127,11 @@
     overflow: hidden;
     opacity: 0;
     pointer-events: none;
+    border-radius: 16px;
+}
+
+.search-bar :hover {
+    cursor: text;
 }
 
 .search-bar.active .search-text {
@@ -141,6 +146,11 @@
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    margin-left: 10px;
+}
+
+.search-icon:hover {
+    cursor: pointer;
 }
 
 .search-bar.active .search-icon {
@@ -155,11 +165,9 @@
     border: 1px solid var(--color-text1);
     border-top: none;
     background-color: var(--color-text-oscuro);
-    max-height: 150px;
-    overflow-y: auto;
     position: absolute;
-    top: 0;
-    width: 100%;
+    top: 45px;
+    width: calc(100% - 40px);
     z-index: 100;
 }
 
@@ -171,7 +179,7 @@
 }
 
 .suggestions li:hover {
-    background-color: var(--color-text2);
+    background-color: var(--color-background-amarillento);
     color: var(--color-text2);
 }
 
@@ -234,6 +242,17 @@
     border: 1px solid var(--color-background-box);
     flex: 0 0 auto;
     cursor: pointer;
+}
+
+.logged_icon{
+    width: clamp(3rem, 3vw, 5vw);
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid var(--color-background-box);
+    flex: 0 0 auto;
+    cursor: pointer;
+    display: none;
 }
 
 .access_menu {
@@ -337,42 +356,75 @@
     padding: 10px 10px 0 0;
     font-weight: bold;
     cursor: pointer;
+    color: #000;
 }
 
-.register_form{
+
+
+.register_form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align:left;
+    text-align: left;
     background-color: transparent;
 }
 
-.register_form label{
+.form-group {
     width: 70%;
-    font-size: clamp(1rem, 1.3vw, 1rem);
-    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 15px; /* Espaciado entre los grupos */
 }
 
-.register_form input{
-    width: 70%;
-    height: 30px;
-    padding: 5px;
+.form-group input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
     border: 1px solid #000;
     font-size: clamp(0.7rem, 1.1vw, 1rem);
     border-radius: 8px;
+    margin: 10px 0;
+    outline: none;
+    background-color: transparent;
 }
 
-.register_form button{
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #666;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input:focus + label, .input:valid + label {
+    top: 0;
+    left: 10px;
+    transform: translateY(20%);
+    font-size: 0.8rem;
+    padding-inline: 5px;
+    background-color: var(--color-popup);
+}
+
+.register_form button {
     width: 50%;
-    height: 30px;
-    padding: 5px;
+    height: 40px;
+    padding: 10px;
     margin: 15px 0;
     border: 1px solid #000;
     border-radius: 8px;
     background-color: var(--color-button2);
     cursor: pointer;
+    box-shadow: 4px 4px 1px #000a;
+}
+
+.register_form button:active {
+    box-shadow: inset 4px 4px 1px #000a;
 }
 
 
@@ -405,6 +457,7 @@
     padding: 10px 10px 0 0;
     font-weight: bold;
     cursor: pointer;
+    color: #000;
 }
 
 .login_form{
@@ -417,22 +470,6 @@
     background-color: transparent;
 }
 
-.login_form label{
-    width: 70%;
-    font-size: clamp(0.7rem, 1.1vw, 1rem);
-    margin-top: 12px;
-}
-
-.login_form input{
-    width: 70%;
-    height: 30px;
-    padding: 5px;
-    border: 1px solid #000;
-    font-size: clamp(0.7rem, 1.1vw, 1rem);
-    border-radius: 8px;
-
-}
-
 .login_form button{
     width: 50%;
     height: 30px;
@@ -442,6 +479,11 @@
     border-radius: 8px;
     background-color:  var(--color-button2);
     cursor: pointer;
+    box-shadow: 4px 4px 1px #000a;
+}
+
+.login_form button:active {
+    box-shadow: inset 4px 4px 1px #000a;
 }
 
 /* Fondo oscuro para el popup */
@@ -491,8 +533,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
+        justify-content: center;
         margin-top: 10px;
-        text-wrap: nowrap;
     }
 
     .access_register, .access_login {
@@ -502,7 +545,7 @@
     }
 
     .register-popup, .login-popup {
-        width: 90%;
+        width: 70%;
         
     }
 }
