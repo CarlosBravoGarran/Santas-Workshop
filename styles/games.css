@@ -11,12 +11,33 @@
     justify-content: space-evenly;
 }
 
+.game_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 80%;
+    flex-wrap: wrap;
+}
+
+.game_buttons.open{
+    flex-direction: column;
+    width: 5%;
+}
+
+.game_buttons.open > .game_btn, .game_buttons.open > .close-game_btn{
+    width: 60px;
+    height: 60px;
+    font-size: 0.8rem;
+}
+
 .game_btn{
     width: 150px;
     height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: var(--color-button2);
     color: var(--color-text-global);
     border: 2px solid #000a;
@@ -24,8 +45,6 @@
     box-shadow: 10px 10px 1px #000;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: all 0.3s;
-    display: none;
 }
 
 .game_btn:active{
@@ -33,8 +52,29 @@
 
 }
 
+.close-game_btn{
+    width: 150px;
+    height: 150px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-button2);
+    color: var(--color-text-global);
+    border: 2px solid #000a;
+    border-radius: 50%;
+    box-shadow: 10px 10px 1px #000;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.close-game_btn:active{
+    box-shadow: inset 10px 10px 1px #000;
+
+}
+
 .game_container{
-    display: flex;
+    display: none;
     justify-content: space-evenly;
     width: 80%;
     height: 90%;
