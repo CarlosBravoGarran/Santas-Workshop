@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cameraContainer.innerHTML = ''; // Limpiar contenedor antes de agregar
             cameraContainer.appendChild(videoElement); // Mostrar video
         } catch (error) {
-            console.error('No se pudo acceder a la cámara:', error);
-            alert('Por favor, permite el acceso a la cámara para usar esta funcionalidad.');
+            showNotification('No se pudo acceder a la cámara.', 'error');
         }
     }
 

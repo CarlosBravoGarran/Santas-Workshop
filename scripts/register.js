@@ -38,27 +38,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Validar que los campos no estén vacíos
         if (!name || !email || !password || !confirmPassword) {
-            alert('Por favor, completa todos los campos.');
+            showNotification('Por favor, completa todos los campos.', 'warning');
             return;
         }
 
         // Validar formato del correo electrónico
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            alert('Por favor, introduce un correo electrónico válido.');
+            showNotification('Por favor, introduce un correo electrónico válido.', 'error');
             return;
         }
 
         // Validar la contraseña
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
         if (!passwordRegex.test(password)) {
-            alert('La contraseña debe tener al menos 8 caracteres, incluyendo letras y números.');
+            showNotification('La contraseña debe tener al menos 8 caracteres, una letra y un número.', 'error');
             return;
         }
 
         // Verificar que las contraseñas coincidan
         if (password !== confirmPassword) {
-            alert('Las contraseñas no coinciden.');
+            showNotification('Las contraseñas no coinciden.', 'error');
             return;
         }
 
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Comprobar si el usuario ya existe en localStorage
         let users = JSON.parse(localStorage.getItem('users')) || [];
         if (users.some((u) => u.email === email)) {
-            alert('Este correo ya está registrado.');
+            showNotification('Este correo ya está registrado.', 'warning');
             return;
         }
 
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('users', JSON.stringify(users));
 
         // Confirmar registro y cerrar formulario
-        alert('¡Registro exitoso!');
+        showNotification('¡Registro exitoso!', 'success');
         registerForm.reset(); // Limpiar el formulario
         registerPopup.classList.remove('open');
     });

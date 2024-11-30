@@ -47,8 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Deshabilitar el botón de guardar si el canvas está vacío
             savePhotoBtn.disabled = isCanvasEmpty(popupCanvas);
         } catch (error) {
-            console.error('Error al acceder a la cámara:', error);
-            alert('No se pudo acceder a la cámara.');
+            showNotification('No se pudo acceder a la cámara.', 'error');
         }
     });
 

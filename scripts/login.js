@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const userIndex = users.findIndex((u) => u.email === email);
 
         if (userIndex === -1) {
-            alert('Correo no registrado. Por favor, regístrate primero.');
+            showNotification('Correo no registrado. Por favor, regístrate primero.', 'warning');
             return;
         }
 
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Validar contraseña
         const hashedPassword = CryptoJS.SHA256(password).toString();
         if (user.password !== hashedPassword) {
-            alert('Contraseña incorrecta.');
+            showNotification('Contraseña incorrecta. Por favor, intentalo de nuevo.', 'error');
             return;
         }
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('users', JSON.stringify(users));
 
         // Inicio de sesión exitoso
-        alert(`¡Bienvenido, ${user.name}!`);
+        showNotification(`¡Bienvenido, ${user.name}!`, 'success');
 
         // Limpiar y cerrar el formulario
         loginForm.reset();
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 logoutMenu.style.display = 'none';
             }, 100);
             
-            alert('Sesión cerrada correctamente.');
+            showNotification('Sesión cerrada correctamente.', 'success');
         }
     }
 

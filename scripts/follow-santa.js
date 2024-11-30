@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await response.json();
 
         if (data.length === 0) {
-            alert('No se encontró el país. Intenta con otro nombre.');
+            showNotification('País no encontrado.', 'warning');
             return null;
         }
 
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.search-btn').addEventListener('click', async () => {
         const country = document.querySelector('.country-search').value.trim();
         if (!country) {
-            alert('Por favor, escribe un país.');
+            showNotification('Por favor, introduce un país.', 'error');
             return;
         }
 
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             countryCoords.lng
         );
 
-        alert(`Santa está a aproximadamente ${distance.toFixed(2)} km de ${country}.`);
+        showNotification(`Santa está a aproximadamente ${distance.toFixed(2)} km de ${country}.`, 'success', 5000);
     });
 
     // Botón para ubicar a Santa en el mapa
