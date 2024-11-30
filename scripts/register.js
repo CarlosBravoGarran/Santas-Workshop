@@ -85,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Confirmar registro y cerrar formulario
         showNotification('¡Registro exitoso!', 'success');
-        registerForm.reset(); // Limpiar el formulario
+        registerForm.reset();
+        darkOverlay.style.display = 'none';
         registerPopup.classList.remove('open');
     });
 });
