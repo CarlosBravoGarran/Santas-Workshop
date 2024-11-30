@@ -1,6 +1,4 @@
-  
 document.addEventListener('DOMContentLoaded', () => {
-
     const loginButton = document.querySelector('.access_login');
     const loginPopup = document.querySelector('.login-popup');
     const loginForm = document.querySelector('.login_form');
@@ -8,6 +6,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoutMenu = document.querySelector('.access_logout');
     const logoutButton = document.querySelector('.logout_button');
     const darkOverlay = document.querySelector('.login_dark-overlay');
+    const accessMenuButton = document.querySelector('.access_icon');
+    const accessMenu = document.querySelector('.access_menu');
+    const loggedIconButton = document.querySelector('.logged_icon');
+
+    // Asegurar que la sesión esté cerrada al cargar la página
+    const resetSessions = () => {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const updatedUsers = users.map(user => ({ ...user, active: false }));
+        localStorage.setItem('users', JSON.stringify(updatedUsers));
+
+        // Mostrar el botón de acceso y ocultar el botón de usuario conectado
+        accessMenuButton.style.display = 'inline-block';
+        loggedIconButton.style.display = 'none';
+    };
+
+    resetSessions();
 
     // Abrir el formulario de login
     loginButton?.addEventListener('click', () => {
@@ -60,26 +74,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // Actualizar sesión activa
         users[userIndex].active = true;
         localStorage.setItem('users', JSON.stringify(users));
-
-        // Inicio de sesión exitoso
         showNotification(`¡Bienvenido, ${user.name}!`, 'success');
+
+        darkOverlay.style.display = 'none';
 
         // Limpiar y cerrar el formulario
         loginForm.reset();
         loginPopup.classList.remove('open');
-        
-        // Cerrar menú
-        accessMenu.classList.remove('open');
-        setTimeout(() => {
-            accessMenu.style.display = 'none';
-        }, 100);
-        
+
+        // Cambiar el botón de acceso al menú por el botón de usuario conectado
+        accessMenuButton.style.display = 'none';
+        accessMenu.style.display = 'none';
+        loggedIconButton.style.display = 'inline-block';
     });
 
     // Cerrar sesión
-    logoutButton?.addEventListener('click', logout);
-
-    function logout() {
+    logoutButton?.addEventListener('click', () => {
         const users = JSON.parse(localStorage.getItem('users')) || [];
         const activeUserIndex = users.findIndex((u) => u.active === true);
 
@@ -94,7 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100);
             
             showNotification('Sesión cerrada correctamente.', 'success');
-        }
-    }
 
-  });
+            // Cambiar el botón de usuario conectado por el botón de acceso al menú
+            loggedIconButton.style.display = 'none';
+            accessMenuButton.style.display = 'inline-block'; // Mostrar botón de acceso al menú
+        }
+    });
+});

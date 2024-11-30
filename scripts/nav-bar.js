@@ -129,48 +129,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Botones de Acceso ---
-    const accessButton = document.querySelector('.access');
+    const accessButton = document.querySelector('.access_icon');
     const accessMenu = document.querySelector('.access_menu');
-    const logoutMenu = document.querySelector('.logout_menu');
+    const logoutMenu = document.querySelector('.access_logout');
+    const logoutButton = document.querySelector('.logged_icon');
 
-    // Verificar sesión activa
-    function getActiveSession() {
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        return users.find((u) => u.active === true);
-    }
+    // Toggle menú de acceso al hacer clic en el botón de acceso
+    accessButton?.addEventListener('click', () => {
+        accessMenu.style.display = 'block';
+        setTimeout(() => {
+            accessMenu.classList.toggle('open');
+        }, 100);
+    });
 
-    // Cambiar menús de acceso
-    function toggleMenus() {
-        const activeUser = getActiveSession();
-
-        if (activeUser) {
-            // Mostrar menú de logout si hay sesión iniciada
-            if (!logoutMenu.classList.contains('open')) {
-                logoutMenu.style.display = 'block';
-                setTimeout(() => {
-                    logoutMenu.classList.add('open');
-                }, 100);
-            } else {
-                logoutMenu.classList.remove('open');
-                setTimeout(() => {
-                    logoutMenu.style.display = 'none';
-                }, 100);
-            }
-        } else {
-            // Mostrar menú de acceso si no hay sesión iniciada
-            if (!accessMenu.classList.contains('open')) {
-                accessMenu.style.display = 'block';
-                setTimeout(() => {
-                    accessMenu.classList.add('open');
-                }, 100);
-            } else {
-                accessMenu.classList.remove('open');
-                setTimeout(() => {
-                    accessMenu.style.display = 'none';
-                }, 100);
-            }
-        }
-    }
-
-    accessButton?.addEventListener('click', toggleMenus);
+    // toggle menú logout al hacer clic en el botón de logout
+    logoutButton?.addEventListener('click', () => {
+        logoutMenu.style.display = 'block';
+        console.log('logoutButton');
+        setTimeout(() => {
+            logoutMenu.classList.toggle('open');
+        }, 100);
+    });
+    
 });
