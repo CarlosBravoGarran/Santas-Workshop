@@ -86,6 +86,7 @@
     height: 25px;
     cursor: pointer;
     z-index: 101;
+    margin: 0 15px ;
 }
 
 .menu-toggle .line {
@@ -107,11 +108,10 @@
 
 .search-bar {
     display: flex;
-    align-items: center;
+    align-items: start;
     position: relative;
     width: auto;
     height: 40px;
-    margin-left: 15px
 }
 
 .search-text {
@@ -127,6 +127,8 @@
     overflow: hidden;
     opacity: 0;
     pointer-events: none;
+    border-radius: 16px;
+
 }
 
 .search-bar.active .search-text {
@@ -141,6 +143,7 @@
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    margin-left: 10px;
 }
 
 .search-bar.active .search-icon {
@@ -155,11 +158,9 @@
     border: 1px solid var(--color-text1);
     border-top: none;
     background-color: var(--color-text-oscuro);
-    max-height: 150px;
-    overflow-y: auto;
     position: absolute;
-    top: 0;
-    width: 100%;
+    top: 45px;
+    width: calc(100% - 40px);
     z-index: 100;
 }
 
@@ -171,7 +172,7 @@
 }
 
 .suggestions li:hover {
-    background-color: var(--color-text2);
+    background-color: var(--color-background-amarillento);
     color: var(--color-text2);
 }
 

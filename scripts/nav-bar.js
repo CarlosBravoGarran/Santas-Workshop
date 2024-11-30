@@ -29,6 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Navegar al presionar Enter
+    searchInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && searchInput.value.trim()) {
+            navigateToSection(searchInput.value.trim());
+            closeSearchBar();
+        }
+    });
+
     // Secciones del sitio web
     const sections = [
         "Inicio",
