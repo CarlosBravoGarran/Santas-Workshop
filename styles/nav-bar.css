@@ -533,8 +533,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
+        justify-content: center;
         margin-top: 10px;
-        text-wrap: nowrap;
     }
 
     .access_register, .access_login {
@@ -544,7 +545,7 @@
     }
 
     .register-popup, .login-popup {
-        width: 90%;
+        width: 70%;
         
     }
 }
