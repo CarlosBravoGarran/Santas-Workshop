@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeLoginButton?.addEventListener('click', () => {
         loginPopup.classList.remove('open');
         darkOverlay.style.display = 'none';
+        loginForm.reset();
     });
 
     // Cerrar el formulario de login al hacer clic fuera
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!loginPopup.contains(e.target) && !loginButton.contains(e.target)) {
             loginPopup.classList.remove('open');
             darkOverlay.style.display = 'none';
+            loginForm.reset();
         }
     });
 

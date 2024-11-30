@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeButton?.addEventListener('click', () => {
         registerPopup.classList.remove('open');
         darkOverlay.style.display = 'none';
+        registerForm.reset();
     });
 
     // Cerrar el formulario al hacer clic fuera
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!registerPopup.contains(e.target) && !registerButton.contains(e.target)) {
             registerPopup.classList.remove('open');
             darkOverlay.style.display = 'none';
+            registerForm.reset();
         }
     });
 
