@@ -20,7 +20,7 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const notificationContainer = document.getElementById('notification-container');
 
-    function showNotification(message, type = 'success', duration = 3000) {
+    function showNotification(message, type = 'success', duration = 5000) {
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
         
@@ -52,4 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Exportar la función para usarla globalmente
     window.showNotification = showNotification;
+
+
+    // Función para verificar si hay un usuario activo
+    function isUserLoggedIn() {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        return users.some(user => user.active);
+    }
+
+    window.isUserLoggedIn = isUserLoggedIn;
 });

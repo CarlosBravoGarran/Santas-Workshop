@@ -37,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle botón llamada
     toggleCallButton.addEventListener('click', () => {
+        if (!isUserLoggedIn()) {
+            showNotification('Debe iniciar sesión para utilizar esta funconalidad.', 'warning');
+            return;
+        }
         if (videocallVideo.style.display === 'block') {
             // Terminar llamada
             videocallVideo.pause();

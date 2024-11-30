@@ -51,6 +51,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 input[type="button"] {
@@ -77,6 +78,13 @@ input[type="button"] {
     align-items: center;
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
 #notification-container {
     position: fixed;
     top: 10px;
@@ -99,6 +107,7 @@ input[type="button"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     opacity: 0;
     transform: translateY(-100%);
     animation: slideDown 0.5s forwards, fadeOut 0.5s 3s forwards;
@@ -126,10 +135,11 @@ input[type="button"] {
     background: none;
     border: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 30px;
     cursor: pointer;
     line-height: 1;
     padding: 0;
+    height: 100%;
 }
 
 .notification-close:hover {

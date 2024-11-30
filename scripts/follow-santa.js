@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.search-btn').addEventListener('click', async () => {
         const country = document.querySelector('.country-search').value.trim();
         if (!country) {
-            showNotification('Por favor, introduce un país.', 'error');
+            showNotification('Por favor, introduce un país.', 'warning');
             return;
         }
 
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             countryCoords.lng
         );
 
-        showNotification(`Santa está a aproximadamente ${distance.toFixed(2)} km de ${country}.`, 'success', 5000);
+        showNotification(`Santa está a aproximadamente ${distance.toFixed(2)} km de ${country}.`, 'success');
     });
 
     // Botón para ubicar a Santa en el mapa

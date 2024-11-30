@@ -128,7 +128,10 @@
     opacity: 0;
     pointer-events: none;
     border-radius: 16px;
+}
 
+.search-bar :hover {
+    cursor: text;
 }
 
 .search-bar.active .search-text {
@@ -144,6 +147,10 @@
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
     margin-left: 10px;
+}
+
+.search-icon:hover {
+    cursor: pointer;
 }
 
 .search-bar.active .search-icon {
