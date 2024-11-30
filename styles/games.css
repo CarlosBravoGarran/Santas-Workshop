@@ -6,3 +6,38 @@
     flex-direction: column;
     align-items: center;
 }
+
+.games_content{
+    justify-content: space-evenly;
+}
+
+.game_btn{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-button2);
+    color: var(--color-text-global);
+    border: 2px solid #000a;
+    border-radius: 50%;
+    box-shadow: 10px 10px 1px #000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: none;
+}
+
+.game_btn:active{
+    box-shadow: inset 10px 10px 1px #000;
+
+}
+
+.game_container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 90%;
+    background-color: var(--color-background-amarillento);
+
+}
