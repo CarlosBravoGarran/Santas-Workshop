@@ -554,24 +554,33 @@
                 <p> ¡Mantente informado! </p>
             </div>
         </div>
-        <button class="help-button" onclick="togglePopup()">❓</button>
-        <div id="help-popup" class="popup hidden">
-            <div class="popup-content">
-                <span class="close-button" onclick="togglePopup()">x</span>
+        <button class="help-button" onclick="togglePopupAyuda()">❓</button>
+        <div id="help-popup" class="popup-ayuda hidden">
+            <div class="popup-ayuda-content">
+                <span class="close-ayuda-button" onclick="togglePopupAyuda()">x</span>
                 <h3>¿En qué necesitas ayuda?</h3>
-                <form>
+                <form  onsubmit="handleFormSubmit(event)">
                     <div>
                         <label for="consulta">Describe tu problema:</label>
-                        <textarea class = "caja_escribir_ayuda" id="consulta" name="consulta" rows="4" required></textarea>
+                        <textarea class = "caja-escribir-ayuda" id="consulta" name="consulta" rows="4" required placeholder="Escribe aquí tu problema"></textarea>
                     </div>
                     <div>
-                        <label for="email">Escribe tu correo electrónico para poder responderte:</label>
-                        <input class = "caja_escribir_ayuda" type="email" id="email" name="email" required>
+                        <label for="email">Escribe tu correo electrónico para contactar contigo cuanto antes:</label>
+                        <input class = "caja-escribir-ayuda" type="email" id="email" name="email" required placeholder="Email">
                     </div>
-                    <button type="submit">Enviar</button>
+                    <div class="boton-ayuda-enviar">
+                        <button type="submit">Enviar</button>
+                    </div>
                 </form>
             </div>
         </div>
+        <div id="help-answer" class="popup-respuesta-ayuda hidden">
+            <div class="popup-respuesta-ayuda-content">
+                <h3>¡Mensaje enviado con éxito!</h3>
+                <p>En breve recibirás una respuesta.</p>
+                <button onclick="closeRespuestaPopup()">x</button>
+            </div>
+        </div>        
     </footer>
 </body>
 </html>
