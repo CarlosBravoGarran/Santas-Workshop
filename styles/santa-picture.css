@@ -50,7 +50,7 @@
 .photo {
     width: 45%;
     height: 80%; 
-    min-width: 200px;
+    min-width: 180px;
     max-width: 400px;
     display: flex;
     flex-direction: column;
@@ -61,7 +61,6 @@
     border-radius: 10px; 
     margin-left: 10px;
 }
-
 
 .photo_container {
     width: 90%; 
