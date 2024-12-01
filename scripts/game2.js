@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startGame() {
+        timerDisplay.style.display = 'inline'
+
         if (timer) {
             clearInterval(timer);
         }
@@ -77,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.removeEventListener('mousemove', draw);
         canvas.removeEventListener('mouseup', stopDrawing);
         canvas.removeEventListener('mouseleave', stopDrawing);
+        timerDisplay.textContent = '';
 
         showMessage("¡Tiempo agotado!");
     }
