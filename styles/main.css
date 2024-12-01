@@ -54,6 +54,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 input[type="button"] {
