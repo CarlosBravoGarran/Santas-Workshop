@@ -56,7 +56,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--color-popup);
+    background-color: var(--color-background-box);
     overflow: hidden; 
     border-radius: 10px; 
     margin-left: 10px;
