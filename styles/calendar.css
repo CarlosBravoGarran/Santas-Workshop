@@ -18,6 +18,9 @@
     width: 90%;
     max-width: 1200px;
 }
+.calendar_title {
+    margin-bottom: 50px;
+}
 
 .calendar-tab {
     flex: 1 0 calc(20% - 20px);
@@ -128,10 +131,9 @@
 }
 
 .popup-text.blocked {
-    color: red; 
+    color: var(--color-background-box2); 
     font-weight: bold;
 }
-
 
 @keyframes popupOpen {
     from {
