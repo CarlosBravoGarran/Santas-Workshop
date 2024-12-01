@@ -75,3 +75,31 @@
 .gallery_arrow--right {
     right: 10px;
 }
+
+.gallery_indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.gallery_indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    transition: background-color 0.3s ease;
+}
+
+.gallery_indicator.active {
+    background-color: black;
+}
+
+
+@media screen and (max-width: 600px) {
+    
+    .gallery_arrow {
+        display: none;
+    }
+}
