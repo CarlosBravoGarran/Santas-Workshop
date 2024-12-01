@@ -328,6 +328,7 @@
                         <div class="game1_instructions">
                             <h3 class="game1_title">¡Decora tu galleta de Navidad!</h3>
                             <p class="game1_text">Arrastra los accesorios a la galleta para decorarla. <br> <br> Eliminalos haciendo click sobre ellos</p>
+                            <button class="download-btn">Descarga Tu Galleta</button>
                         </div>
                         <div class="accessories">
                             <!-- Accesorios disponibles para arrastrar -->
@@ -383,16 +384,36 @@
                             </div>
                             <button class="game2_start">Empezar Juego</button>
                         </div>
-                        <script src="scripts/game2.js"></script>
                     </div>
-                    <div id="game3" class="game">
 
+                    <div id="game3" class="game">
+                        <div class="game3_instructions">
+                            <h3 class="game3_title">¡Protege los regalos!</h3>
+                            <p class="game3_text">Haz click en el Grinch antes de que llegue a los regalos. <br> <br> ¡Tienes 3 vidas!</p>
+                        </div>
+                        <div class="game3_stage">
+                            <div class="game3_gift">🎁</div>
+                            <div class="game3_message" style="display: none;"></div>
+                        </div>
+                        <div class="game3_controls">
+                            <div class="game3_timer">Tiempo: <span class="game3_timer-display">60</span>s</div>
+                            <div class="game3_live-display">
+                                Vidas restantes:
+                                <div class="game3_lives">
+                                
+                                </div>
+                            </div>
+                            <button class="game3_start-btn">Empezar</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <script src="scripts/games.js"></script>
             <script src="scripts/game1.js"></script>
-        </div>
+            <script src="https://cdn.jsdelivr.net/npm/html2canvas"></script>
+            <script src="scripts/game2.js"></script>
+            <script src="scripts/game3.js"></script>
+        </div>  
             
         <div id="gallery">
             <h2 class="title gallery_title">Galería</h2>

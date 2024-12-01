@@ -15,7 +15,7 @@
 }
 
 .game2_title {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1.5rem, 2.6vw, 2.2rem);
     margin: 10px;
 }
 
@@ -78,12 +78,21 @@
     transform: scale(1.2);
 }
 
+
 .game2_start {
     width: 75%;
     margin-top: 20px;
     padding: 10px 20px;
     font-size: clamp(1rem, 1.8vw, 1.5rem);
     cursor: pointer;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+}
+
+.game2_start:hover {
+    background-color: #45a049;
 }
 
 .game2_canvas {

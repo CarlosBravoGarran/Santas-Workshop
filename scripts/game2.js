@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameButton = document.querySelector('.game2_start');
     const messageContainer = document.querySelector('.game2_message');
     const colorButtons = document.querySelectorAll('.color-btn');
-    
+
     let drawing = false;
     let wordToDraw = '';
     let timer;
