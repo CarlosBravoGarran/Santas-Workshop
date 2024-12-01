@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const livesContainer = document.querySelector('.game3_lives');
     const timerDisplay = document.querySelector('.game3_timer-display');
     const startButton = document.querySelector('.game3_start-btn');
+    const endMessage = document.querySelector('.game3_message');
     const maxTime = 60;
     let lives = 3;
     let timeLeft = maxTime;
@@ -74,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentX = parseFloat(grinch.style.left);
             const currentY = parseFloat(grinch.style.top);
 
-            const dx = (targetX - currentX) * 0.05;
-            const dy = (targetY - currentY) * 0.05;
+            const dx = (targetX - currentX) * 0.03;
+            const dy = (targetY - currentY) * 0.03;
 
             grinch.style.left = `${currentX + dx}px`;
             grinch.style.top = `${currentY + dy}px`;
@@ -113,9 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.grinch').forEach(grinch => grinch.remove());
 
         if (won) {
-            alert('¡Ganaste! Protegiste el regalo.');
+            endMessage.textContent = '¡Ganaste! El regalo está a salvo.';
+            endMessage.style.display = 'block';
+
         } else {
-            alert('¡Perdiste! El regalo fue robado.');
+            endMessage.textContent = '¡Perdiste! El Grinch se llevó el regalo.';
+            endMessage.style.display = 'block';
         }
         startButton.disabled = false;
     }
@@ -129,6 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startButton.disabled = true; // Desactivar el botón de empezar mientras el juego en curso
 
+        endMessage.style.display = 'none';
+
 
         gameInterval = setInterval(() => {
             timeLeft--;
@@ -139,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 spawnGrinch();
             }
-        }, 2000);
+        }, 1500);
     }
 
     startButton.addEventListener('click', startGame);
