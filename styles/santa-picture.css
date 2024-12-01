@@ -170,7 +170,6 @@
     opacity: 0.5;
 }
 
-/* Fondo oscuro para el popup */
 .camera_dark-overlay {
     position: fixed;
     top: 0;
@@ -180,4 +179,23 @@
     background-color: rgba(0, 0, 0, 0.6);
     display: none;
     z-index: 1;
+}
+
+
+@media screen and (max-width: 768px){
+    
+    .selfie_camera{
+        flex-direction: column;
+    }
+
+    .camera_feed{
+        width: 70%;
+        height: 50%;
+    }
+
+    .camera_canvas{
+        width: 70%;
+        height: 50%;
+    }
+
 }
