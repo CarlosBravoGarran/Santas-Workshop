@@ -285,7 +285,9 @@
                             <h3 class="videocall_message_title">¡Papá Noel tiene algo que decirte!</h3>
                             <p class="videocall_message_text">Pulsa el botón para empezar la videollamada
                         </div>
-                        <video class="videocall_video" src="images/video_santa.mp4"></video>
+                        <video id="myVideo" class="videocall_video" src="images/videocall.mp4">
+                            <track class="text" src="images/subtitles.vtt" kind="subtitles" srclang="es" label="Español">
+                        </video>
                     </div>
                 </div>
             </div>
@@ -293,6 +295,10 @@
                 <button class="videocall_button videocall_start">
                     <img class="videocall_icon" src="images/call_icon.webp" alt="Icono videollamada">
                 </button>
+                <button class="subtitles_btn">
+                    <img class="subtitles_icon" src="images/captions.png" alt="Icono subtítulos">
+                </button>
+
             </div>
             <div class="videocall_camara">
 
