@@ -89,11 +89,11 @@
                 <li><a href="#history">Historia</a></li>
                 <li><a href="#calendar">Calendario</a></li>
                 <li><a href="#follow-santa">Sigue a Santa</a></li>
-                <li><a href="#letters">Cartas</a></li>
+                <li><a href="#letters">Envía tu carta</a></li>
                 <li><a href="#videocall">Videollamada</a></li>
                 <li><a href="#elf-name">Tu Nombre de Elfo</a></li>
                 <li><a href="#santa-picture">Conviertete en Elfo</a></li>
-                <li><a href="#lists">Las Listas</a></li>
+                <li><a href="#lists">Listas de niños buenos y malos</a></li>
                 <li><a href="#games">Juegos</a></li>
                 <li><a href="#gallery">Galería</a></li>
                 <li><a href="#experience">Experiencia</a></li>
@@ -121,7 +121,7 @@
                 <img class="imagen-interactiva_icono imagen-interactiva_icono_mapa" src="images/estrella.webp" alt="Icono mapa">
             </div>
             <div class="imagen-interactiva imagen-interactiva_cartas" onclick="location.href='#letters'">
-                <div class="texto-hover">Cartas</div>
+                <div class="texto-hover">Envía tu carta</div>
                 <img class="imagen-interactiva_icono imagen-interactiva_icono_cartas" src="images/estrella.webp" alt="Icono cartas">
             </div>
             <div class="imagen-interactiva imagen-interactiva_videollamada" onclick="location.href='#videocall'">
@@ -137,7 +137,7 @@
                 <img class="imagen-interactiva_icono imagen-interactiva_icono_conviertete_elfo" src="images/estrella.webp" alt="Icono conviertete en elfo">
             </div>
             <div class="imagen-interactiva imagen-interactiva_listas" onclick="location.href='#lists'">
-                <div class="texto-hover">Listas</div>
+                <div class="texto-hover">Listas de niños buenos y malos</div>
                 <img class="imagen-interactiva_icono imagen-interactiva_icono_listas" src="images/estrella.webp" alt="Icono listas">
             </div>
             <div class="imagen-interactiva imagen-interactiva_juegos" onclick="location.href='#games'">
@@ -271,8 +271,43 @@
         </div>
 
         <div id="letters">
-            <h2 class="title letters_title">Cartas</h2>
+            <h2 class="title letters_title">Envía tu carta</h2>
             <div class="content letters_content">
+                <div class="formulario_section"> 
+                    <form action="" class="formulario_enviar_carta" id="formulario_mi_carta">
+                        <div class="nom_email">
+                            <div class="caja_label">
+                                <label class="nombre_etiqueta" for="nombre">Nombre *</label> 
+                                <input class="formulario_input" id="nombre" type="text" required minlength="3" placeholder="Nombre">
+                            </div>
+                            <div class="caja_label">
+                                <label class="nombre_etiqueta" for="email">Email *</label>
+                                <input class="formulario_input" id="email" type="email" required placeholder="Email">
+                            </div>
+                        </div> 
+                        <div class="lugar">
+                            <div class="caja_label">
+                                <label class="nombre_etiqueta" for="ciudad">Ciudad *</label>
+                                <input class="formulario_input" id="ciudad" type="text" required placeholder="Ciudad">
+                            </div>
+                            <div class="caja_label">
+                                <label class="nombre_etiqueta" for="pais">País *</label>
+                                <input class="formulario_input" id="pais" type="text" required placeholder="País">
+                            </div>
+                        </div> 
+                        <div class="mi_carta"> 
+                            <div class="caja_label">
+                                <label class="nombre_etiqueta" for="carta">Carta para Papá Noél *</label>
+                                <textarea class="formulario_input_mi_carta" id="carta" required placeholder="Escribe tu carta"></textarea>
+                            </div>
+                        </div> 
+                        <div class="boton_enviar">
+                            <button class="formulario_submit" onclick="enviar_carta()">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
             </div>
         </div>
@@ -354,7 +389,7 @@
         </div>
 
         <div id="lists">
-            <h2 class="title lists_title">Las Listas</h2>
+            <h2 class="title lists_title">Listas de niños buenos y malos</h2>
             <div class="content lists_content">
                 <p class="search_lists"> Busca tu nombre en la lista de Papá Noel</p>
                 <div class="lists_container">
