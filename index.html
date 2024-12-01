@@ -13,6 +13,7 @@
     <link rel="icon" href="images/icon.png" type="image/png">
     <script src="scripts/elf-name.js"></script> 
     <script src="scripts/footer.js"></script>
+    <script src="scripts/letters.js"></script>
 </head>
 </head>
 <body>
@@ -303,13 +304,24 @@
                             </div>
                         </div> 
                         <div class="boton_enviar">
-                            <button class="formulario_submit" onclick="enviar_carta()">
+                            <button class="formulario_submit" onclick="enviarCarta()">
                                 Enviar
                             </button>
                         </div>
                     </form>
                 </div>
-
+            </div>
+            <div id="popup-carta-exito" class="popup-carta hidden">
+                <div class="popup-carta-content">
+                    <span class="close-carta-popup">x</span>
+                    <p>¡Carta enviada con éxito! En breve recibirás una respuesta.</p>
+                </div>
+            </div>
+            <div id="popup-carta-registro" class="popup-carta hidden">
+                <div class="popup-carta-content">
+                    <span class="close-carta-popup">x</span>
+                    <p>Por favor, regístrate para poder enviar una carta a Santa.</p>
+                </div>
             </div>
         </div>
         <div id="videocall">

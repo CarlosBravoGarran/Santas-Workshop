@@ -110,4 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
             accessMenuButton.style.display = 'inline-block'; // Mostrar botón de acceso al menú
         }
     });
+
+    // Exportar función para verificar el estado del usuario
+    window.isUserLoggedIn = () => {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const loggedInUser = users.find(user => user.active);
+        console.log(loggedInUser); // Verifica si el usuario está correctamente activo
+        return loggedInUser != undefined;
+    };
 });
