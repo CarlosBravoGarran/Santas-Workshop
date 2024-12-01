@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const stage = document.querySelector('.game3_stage');
     const livesContainer = document.querySelector('.game3_lives');
@@ -65,16 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
         stage.appendChild(grinch);
 
         // Calcular el destino (centro del regalo)
-        const targetX = stageWidth / 2 - grinch.offsetWidth / 2; // Centro del escenario
-        const targetY = stageHeight / 2 - grinch.offsetHeight / 2; // Centro del escenario
+        const targetX = stageWidth / 2 - grinch.offsetWidth / 2;
+        const targetY = stageHeight / 2 - grinch.offsetHeight / 2;
 
         // Mover el Grinch hacia el regalo
         const moveInterval = setInterval(() => {
             const currentX = parseFloat(grinch.style.left);
             const currentY = parseFloat(grinch.style.top);
 
-            const dx = (targetX - currentX) * 0.05; // Movimiento suave
-            const dy = (targetY - currentY) * 0.05; // Movimiento suave
+            const dx = (targetX - currentX) * 0.05;
+            const dy = (targetY - currentY) * 0.05;
 
             grinch.style.left = `${currentX + dx}px`;
             grinch.style.top = `${currentY + dy}px`;
@@ -109,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function endGame(won) {
         clearInterval(gameInterval);
 
-        // Eliminar solo los Grinch, no el regalo
         document.querySelectorAll('.grinch').forEach(grinch => grinch.remove());
 
         if (won) {
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         livesContainer.innerHTML = '<span class="game3_life">🎁</span><span class="game3_life">🎁</span><span class="game3_life">🎁</span>';
         timerDisplay.textContent = timeLeft;
 
-        startButton.disabled = true; // Desactivar el botón de empezar mientras el juego está en curso
+        startButton.disabled = true; // Desactivar el botón de empezar mientras el juego en curso
 
 
         gameInterval = setInterval(() => {
@@ -142,6 +142,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
-    // Agregar evento al botón de "Empezar"
     startButton.addEventListener('click', startGame);
 });
