@@ -1,7 +1,7 @@
 
 #santa-picture{
     height: 100vh;
-    background-color: #aaf;
+    background-color: var(--color-background-global);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,8 +14,9 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--color-background-box);
     padding: 20px;
+    border-radius: 20px;
 }
 
 .selfie_info{
@@ -36,7 +37,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ccc;
+    background-color: var(--color-button2);
     border-radius: 30px;
     box-shadow: 4px 4px 1px rgba(0, 0, 0);
     cursor: pointer;
@@ -55,7 +56,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: #ccc;
+    background-color: var(--color-popup);
     overflow: hidden; 
     border-radius: 10px; 
     margin-left: 10px;
@@ -100,7 +101,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #ebdea8;
+    background-color: var(--color-popup);
     padding: 30px;
 }
 
@@ -118,7 +119,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #eee;
+    background-color: var(--color-popup);
     object-fit: cover;
 }
 

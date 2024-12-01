@@ -2,7 +2,7 @@
 
 #follow-santa {
     height: 100vh;
-    background-color: #aaf;
+    background-color: var(--background-color-global);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,6 +46,7 @@
     gap: 10px;
 }
 
+
 .country-search {
     padding: 5px;
     font-size: 14px;
@@ -53,11 +54,15 @@
     border-radius: 8px;
 }
 
+.country-search:hover {
+    cursor: text;
+}
+
 .search-btn {
     padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
-    background-color: #f22;
+    background-color: var(--color-button2);
     color: #fff;
     border-radius: 18px;
     box-shadow: 4px 4px 1px rgba(200, 0, 0);
@@ -75,14 +80,14 @@
     padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
-    background-color: #4ccc68;
+    background-color: var(--color-button3);
     color: #fff;
     border-radius: 5px;
     box-shadow: 4px 4px 1px #4c9c68;
 }
 
 .locate-santa-btn:hover {
-    background-color: #4cbc68;
+    background-color: #29e057;
 }
 
 .locate-santa-btn:active {
