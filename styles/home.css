@@ -86,3 +86,92 @@
 .imagen-interactiva_icono_videollamada {
     width: 30px;
 }
+
+.imagen-interactiva_nombre-elfo {
+    top: 59%; 
+    left: 28%;
+}
+
+@media screen and (max-width: 1400px) {
+    .imagen-interactiva_nombre-elfo {
+        top: 58%; 
+        left: 26%;
+    }
+}
+
+.imagen-interactiva_icono_nombre-elfo {
+    width: 22px;
+}
+
+.imagen-interactiva_conviertete_elfo {
+    top: 68%; 
+    left: 12%;
+}
+
+@media screen and (max-width: 1400px) {
+    .imagen-interactiva_conviertete_elfo {
+        top: 68%; 
+        left: 9%;
+    }
+}
+
+.imagen-interactiva_icono_conviertete_elfo {
+    width: 35px;
+}
+
+.imagen-interactiva_listas {
+    top: 17%; 
+    left: 78%;
+}
+
+@media screen and (max-width: 1400px) {
+    .imagen-interactiva_listas {
+        top: 19%; 
+        left: 80%;
+    }
+}
+
+.imagen-interactiva_icono_listas {
+    width: 32px;
+}
+
+.imagen-interactiva_juegos {
+    top: 56%; 
+    left: 37%;
+}
+
+.imagen-interactiva_icono_juegos {
+    width: 30px;
+}
+
+.imagen-interactiva_galeria {
+    top: 21%; 
+    left: 32%;
+}
+
+@media screen and (max-width: 1400px) {
+    .imagen-interactiva_galeria {
+        top: 23%; 
+        left: 30%;
+    }
+}
+
+.imagen-interactiva_icono_galeria {
+    width: 32px;
+}
+
+.imagen-interactiva_experiencia {
+    top: 25%; 
+    left: 20%;
+}
+
+@media screen and (max-width: 1400px) {
+    .imagen-interactiva_experiencia {
+        top: 25%; 
+        left: 15%;
+    }
+}
+
+.imagen-interactiva_icono_experiencia {
+    width:55px;
+}
