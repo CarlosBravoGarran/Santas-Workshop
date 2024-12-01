@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerDisplay = document.querySelector('.timer_display');
     const gameButton = document.querySelector('.game2_start');
     const colorButtons = document.querySelectorAll('.color-btn');
-    
+
     let drawing = false;
     let wordToDraw = '';
     let timer;
-    let timeLeft = 60; 
+    let timeLeft = 60;
     let selectedColor = '#000000'; // Color por defecto negro
 
     // Configuración inicial del lienzo
@@ -27,31 +27,36 @@ document.addEventListener('DOMContentLoaded', () => {
         return words[Math.floor(Math.random() * words.length)];
     }
 
-    // Iniciar el juego
+    // Iniciar o reiniciar el juego
     function startGame() {
-        // Restablecer canvas y temporizador
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawing = false;
-        timeLeft = 60;
+        // Si ya hay un temporizador corriendo, limpiarlo
+        if (timer) {
+            clearInterval(timer);
+        }
+
+        // Restablecer canvas, palabra y temporizador
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el canvas
+        drawing = false; // Detener cualquier dibujo
+        timeLeft = 60; // Reiniciar el contador
         timerDisplay.textContent = timeLeft;
 
-        // Generar palabra
+        // Generar una nueva palabra
         wordToDraw = getRandomWord();
         wordDisplay.textContent = wordToDraw;
 
-        // Habilitar dibujo en el canvas
+        // Volver a habilitar dibujo en el canvas
         canvas.addEventListener('mousedown', startDrawing);
         canvas.addEventListener('mousemove', draw);
         canvas.addEventListener('mouseup', stopDrawing);
         canvas.addEventListener('mouseleave', stopDrawing);
 
-        // Iniciar el temporizador
+        // Reiniciar el temporizador
         timer = setInterval(() => {
             timeLeft--;
             timerDisplay.textContent = timeLeft;
             if (timeLeft <= 0) {
-                clearInterval(timer); 
-                endGame(); 
+                clearInterval(timer); // Detener el temporizador
+                endGame(); // Finalizar el juego
             }
         }, 1000);
     }
@@ -81,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.removeEventListener('mousemove', draw);
         canvas.removeEventListener('mouseup', stopDrawing);
         canvas.removeEventListener('mouseleave', stopDrawing);
+        alert(`¡Tiempo agotado! La palabra era: ${wordToDraw}`);
     }
 
     // Seleccionar color de la paleta
