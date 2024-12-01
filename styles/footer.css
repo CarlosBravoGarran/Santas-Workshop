@@ -1,8 +1,104 @@
 
 .footer{
-    height: 30vh;
-    background-color: #aaa;
+    height: 20vh;
+    width: 100%;
+    background-color: var(--color-barra-nav);
     display: flex;
     flex-direction: column;
+    text-align: left;
+}
+
+.logo{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    padding-left: 10px;
+}
+
+@media screen and (max-width:768px){
+    .logo{
+        width: 40px;
+        height: 40px;
+        padding-left: 5px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .logo{
+        width: 30px;
+        height: 30px;
+        padding-left: 0;
+    }
+}
+
+.elem_pie_de_pag{
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
+    width: 100%;
+    padding-top: 10px;
+    color: var(--color-text1);
+}
+
+.redes_sociales{
+    text-align: center;
+    width: 25%;
+}
+
+@media screen and (max-width:768px){
+    .redes_sociales{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .redes_sociales{
+        width: 35%
+    }
+}
+
+.contacto{
+    text-align: center;
+    width: 30%;
+}
+
+@media screen and (max-width:768px){
+    .contacto{
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .contacto{
+        font-size: 0.6em;
+    }
+}
+
+.informacion{
+    text-align: center;
+    width: 30%;
+}
+
+@media screen and (max-width:768px){
+    .informacion{
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .informacion{
+        font-size: 0.6em;
+    }
+}
+
+.politica_privacidad{
+    color: black;
+}
+
+.politica_privacidad:hover{
+    color: var(--color-text1);
+}
+
+.icono{
+    width:10%;
 }
