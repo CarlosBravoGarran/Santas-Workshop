@@ -2,7 +2,9 @@
 :root{
     --color-text1: #F3F2F2;
     --color-text2: #2F2223;
-    --color-background-global: #251819;
+    --color-barra-nav: #dc3846a9;
+    --color-background-global: #e7c47f;
+    --color-background-global-oscuro: #251819;
     --color-background-amarillento: #e4e7ba;
     --color-background-box: #403234c2; 
     --color-background-box2: #dc3846dc;
@@ -10,9 +12,9 @@
     --color-button1: #85A021;
     --color-button2: #dc3846ea;
     --color-button3: #2cc55d;
-    --color-button4: #ccc;
+    --color-button4: #b48660;
     --color-cursor: #FF4;
-    --color-popup: #eae9b6c2;
+    --color-popup: #e7cb7fd5;
 }
 
 *{
@@ -63,7 +65,7 @@ input[type="button"] {
     justify-self: center;
     align-items: center;
     font-size: 2rem;
-    color: var(--color-text1);
+    color: var(--color-text2);
     padding-top: 10vh;
     margin: 0;
 

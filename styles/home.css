@@ -1,13 +1,88 @@
-
-#home{
+/* Contenedor de la sección #home */
+#home {
     height: 100vh;
-    background-image: url(../images/taller.webp);
+    background-image: url(../images/taller2.jpg);
     background-size: cover;
     background-position: center;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.imagen-interactiva {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.imagen-interactiva_icono{
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.texto-hover {
+    opacity: 0;
+    color: var(--color-text1); 
+    background-color: var(--color-background-box2);
+    margin-bottom: 10px; 
+    padding: 10px;
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.imagen-interactiva:hover .texto-hover {
+    opacity: 1;
+}
+
+.imagen-interactiva:hover .imagen-interactiva_icono {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.imagen-interactiva_historia {
+    top: 55%; 
+    left: 60%;
+}
+
+.imagen-interactiva_icono_historia {
+    width: 70px;
+}
+
+.imagen-interactiva_calendario {
+    top: 20%; 
+    left: 40%;
+}
+
+.imagen-interactiva_icono_calendario {
+    width: 50px;
+}
+
+.imagen-interactiva_mapa {
+    top: 25%; 
+    left: 58%;
+}
+
+.imagen-interactiva_icono_mapa {
+    width: 55px;
+}
+
+.imagen-interactiva_cartas {
+    top: 58%; 
+    left: 48%;
+}
+
+.imagen-interactiva_icono_cartas {
+    width: 40px;
+}
+
+.imagen-interactiva_videollamada {
+    top: 65%; 
+    left: 43%;
+}
+
+.imagen-interactiva_icono_videollamada {
+    width: 30px;
 }

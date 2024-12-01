@@ -27,6 +27,7 @@
     background-color: #ccc;
     overflow: hidden;
     margin-top: 10px;
+    border-radius: 20px;
 }
 
 #map {
