@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dayNumber = parseInt(tab.dataset.day, 10);
 
             // Verificar si es un día futuro
-            if (dayNumber > 11 || currentMonth !== 11) {
+            if (dayNumber > currentDay || currentMonth !== 12) {
                 showPopup("Todavía no hemos llegado a ese día, no lo puedes abrir todavía.", true);
                 return;
             }
