@@ -1,8 +1,10 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.gallery_item');
     const prevArrow = document.querySelector('.gallery_arrow--left');
     const nextArrow = document.querySelector('.gallery_arrow--right');
     const carousel = document.querySelector('.gallery_items');
+    const indicatorsContainer = document.querySelector('.gallery_indicators');
 
     let currentIndex = Math.floor(items.length / 2); // Índice inicial imagen central
     let itemWidth = items[0].offsetWidth + 20; // Ancho de cada imagen + margen
@@ -10,6 +12,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let startX = 0; // Posición inicial del toque
     let endX = 0; // Posición final del toque
+
+    // Crear los indicadores debajo de la galería
+    function createIndicators() {
+        indicatorsContainer.innerHTML = ''; // Limpiar indicadores previos
+
+        items.forEach((_, index) => {
+            const indicator = document.createElement('div');
+            indicator.classList.add('gallery_indicator');
+            if (index === currentIndex) {
+                indicator.classList.add('active'); // Marcar el indicador activo
+            }
+            indicatorsContainer.appendChild(indicator);
+        });
+    }
+
+    // Actualizar los indicadores activos
+    function updateIndicators() {
+        const indicators = indicatorsContainer.querySelectorAll('.gallery_indicator');
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+    }
 
     function updateCarousel(applyInitialOffset = false) {
         // Actualizar clases de posición (active, left, right)
@@ -36,6 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (applyInitialOffset) {
             initialOffsetApplied = true; // Ya no es la imagen inicial
         }
+
+        // Actualizar los indicadores
+        updateIndicators();
     }
 
     // Mover a la izquierda
@@ -77,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         endX = 0;
     });
 
-    // Inicializar el carrusel centrado
+    // Inicializar el carrusel y los indicadores
+    createIndicators();
     updateCarousel(true);
 });

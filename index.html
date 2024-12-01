@@ -89,11 +89,11 @@
                 <li><a href="#history">Historia</a></li>
                 <li><a href="#calendar">Calendario</a></li>
                 <li><a href="#follow-santa">Sigue a Santa</a></li>
-                <li><a href="#letters">Cartas</a></li>
+                <li><a href="#letters">Envía tu carta</a></li>
                 <li><a href="#videocall">Videollamada</a></li>
                 <li><a href="#elf-name">Tu Nombre de Elfo</a></li>
                 <li><a href="#santa-picture">Conviertete en Elfo</a></li>
-                <li><a href="#lists">Las Listas</a></li>
+                <li><a href="#lists">Listas de niños buenos y malos</a></li>
                 <li><a href="#games">Juegos</a></li>
                 <li><a href="#gallery">Galería</a></li>
                 <li><a href="#experience">Experiencia</a></li>
@@ -108,20 +108,65 @@
         <div id="notification-container"></div>
 
         <div id="home">
-
+            <div class="imagen-interactiva imagen-interactiva_historia" onclick="location.href='#history'">
+                <div class="texto-hover">Historia</div>
+                <img class="imagen-interactiva_icono imagen-interactiva_icono_historia" src="images/estrella.webp" alt="Icono historia">
+            </div>
+            <div class="imagen-interactiva imagen-interactiva_calendario" onclick="location.href='#calendar'">
+                <div class="texto-hover">Calendario</div>
+                <img class="imagen-interactiva_icono imagen-interactiva_icono_calendario" src="images/estrella.webp" alt="Icono calendario">
+            </div>
+            <div class="imagen-interactiva imagen-interactiva_mapa" onclick="location.href='#follow-santa'">
+                <div class="texto-hover">Sigue a Santa</div>
+                <img class="imagen-interactiva_icono imagen-interactiva_icono_mapa" src="images/estrella.webp" alt="Icono mapa">
+            </div>
+            <div class="imagen-interactiva imagen-interactiva_cartas" onclick="location.href='#letters'">
+                <div class="texto-hover">Envía tu carta</div>
+                <img class="imagen-interactiva_icono imagen-interactiva_icono_cartas" src="images/estrella.webp" alt="Icono cartas">
+            </div>
+            <div class="imagen-interactiva imagen-interactiva_videollamada" onclick="location.href='#videocall'">
+                <div class="texto-hover">Videollamada</div>
+                <img class="imagen-interactiva_icono imagen-interactiva_icono_videollamada" src="images/estrella.webp" alt="Icono videollamada">
+            </div>
+            <div class="imagen-interactiva imagen-interactiva_nombre-elfo" onclick="location.href='#elf-name'">
+                <div class="texto-hover">Tu nombre de Elfo</div>
+                <img class="imagen-interactiva_icono imagen-interactiva_icono_nombre-elfo" src="images/estrella.webp" alt="Icono nombre elfo">
+            </div>
+            <div class="imagen-interactiva imagen-interactiva_conviertete_elfo" onclick="location.href='#santa-picture'">
+                <div class="texto-hover">Conviéretete en Elfo</div>
+                <img class="imagen-interactiva_icono imagen-interactiva_icono_conviertete_elfo" src="images/estrella.webp" alt="Icono conviertete en elfo">
+            </div>
+            <div class="imagen-interactiva imagen-interactiva_listas" onclick="location.href='#lists'">
+                <div class="texto-hover">Listas de niños buenos y malos</div>
+                <img class="imagen-interactiva_icono imagen-interactiva_icono_listas" src="images/estrella.webp" alt="Icono listas">
+            </div>
+            <div class="imagen-interactiva imagen-interactiva_juegos" onclick="location.href='#games'">
+                <div class="texto-hover">Juegos</div>
+                <img class="imagen-interactiva_icono imagen-interactiva_icono_juegos" src="images/estrella.webp" alt="Icono juegos">
+            </div>
+            <div class="imagen-interactiva imagen-interactiva_galeria" onclick="location.href='#gallery'">
+                <div class="texto-hover">Galería</div>
+                <img class="imagen-interactiva_icono imagen-interactiva_icono_galeria" src="images/estrella.webp" alt="Icono galería">
+            </div>
+            <div class="imagen-interactiva imagen-interactiva_experiencia" onclick="location.href='#experience'">
+                <div class="texto-hover">Experiencia</div>
+                <img class="imagen-interactiva_icono imagen-interactiva_icono_experiencia" src="images/estrella.webp" alt="Icono exprtiencia">
+            </div>
         </div>
         <div id="history">
             <div class="history_box">
                 <h2 class="title history_title">Historia</h2>
+                <img class="history_image" id= "gorro_santa" src="images/gorro_santa.png" alt="Imagen del gorro de Papá Noel">
                 <div class="content history_content">
                     <p>Papá Noel, tambien conocido como Santa Claus, se inspira en San Nicolás de Bari, un obispo del siglo IV famoso por su generosidad hacia los más necesitados.</p>
                     <p>Con el tiempo, su historia llegó a Europa y luego a América, donde fue conocido como "Santa Claus". En el siglo XIX, su imagen comenzó a tomar forma como un hombre alegre, con barba blanca y traje rojo, popularizada en gran parte por ilustraciones y consolidada en los años 30, gracias a campañas de empresas como Coca-Cola. </p>
-                    <p>Hoy, Papá Noel representa el espíritu de generosidad y celebración navideña, simbolizando la tradición de dar y la unión familiar.</p>
+                    <p>Hoy, Papá Noel representa mucho más que un personaje festivo; encarna el espíritu de generosidad, solidaridad y alegría que define la celebración navideña. Su figura simboliza la tradición de dar sin esperar nada a cambio, recordando la importancia de compartir y cuidar de los demás, especialmente de los más pequeños y necesitados. Además, Papá Noel es un símbolo de la unión familiar, uniendo a generaciones en torno a la ilusión de la Navidad, las reuniones familiares, los regalos y los valores de amor y esperanza que caracterizan esta época del año.</p>
                 </div>
+                <img class= "history_image" id="foto_santa" src="images/foto_santa.webp" alt="Imagen de Papá Noel">
             </div>
         </div>
         <div id="calendar">
-            <h1>Calendario de Adviento</h1>
+            <h2 class="title calendar_title">Calendario de Adviento</h2>
             <div class="content calendar-content">
                 <div class="calendar-container">
                     <!-- Genera los días del calendario -->
@@ -215,19 +260,54 @@
                 <div class="search-container">
                     <input type="text" class="country-search" placeholder="Escribe un país" />
                     <button class="search-btn">Calcular distancia</button>
-                    <button class="locate-santa-btn">¿Dónde está Santa?</button>
                 </div>
                 <div class="map-container">
                     <div id="map"></div>
                 </div>
+                <button class="locate-santa-btn">¿Dónde está Santa?</button>
             </div>
             <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
             <script src="scripts/follow-santa.js"></script>
         </div>
 
         <div id="letters">
-            <h2 class="title letters_title">Cartas</h2>
+            <h2 class="title letters_title">Envía tu carta</h2>
             <div class="content letters_content">
+                <div class="formulario_section"> 
+                    <form action="" class="formulario_enviar_carta" id="formulario_mi_carta">
+                        <div class="nom_email">
+                            <div class="caja_label">
+                                <label class="nombre_etiqueta" for="nombre">Nombre *</label> 
+                                <input class="formulario_input" id="nombre" type="text" required minlength="3" placeholder="Nombre">
+                            </div>
+                            <div class="caja_label">
+                                <label class="nombre_etiqueta" for="email">Email *</label>
+                                <input class="formulario_input" id="email" type="email" required placeholder="Email">
+                            </div>
+                        </div> 
+                        <div class="lugar">
+                            <div class="caja_label">
+                                <label class="nombre_etiqueta" for="ciudad">Ciudad *</label>
+                                <input class="formulario_input" id="ciudad" type="text" required placeholder="Ciudad">
+                            </div>
+                            <div class="caja_label">
+                                <label class="nombre_etiqueta" for="pais">País *</label>
+                                <input class="formulario_input" id="pais" type="text" required placeholder="País">
+                            </div>
+                        </div> 
+                        <div class="mi_carta"> 
+                            <div class="caja_label">
+                                <label class="nombre_etiqueta" for="carta">Carta para Papá Noél *</label>
+                                <textarea class="formulario_input_mi_carta" id="carta" required placeholder="Escribe tu carta"></textarea>
+                            </div>
+                        </div> 
+                        <div class="boton_enviar">
+                            <button class="formulario_submit" onclick="enviar_carta()">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
             </div>
         </div>
@@ -240,7 +320,9 @@
                             <h3 class="videocall_message_title">¡Papá Noel tiene algo que decirte!</h3>
                             <p class="videocall_message_text">Pulsa el botón para empezar la videollamada
                         </div>
-                        <video class="videocall_video" src="images/video_santa.mp4"></video>
+                        <video id="myVideo" class="videocall_video" src="images/videocall.mp4">
+                            <track class="text" src="images/subtitles.vtt" kind="subtitles" srclang="es" label="Español">
+                        </video>
                     </div>
                 </div>
             </div>
@@ -248,6 +330,10 @@
                 <button class="videocall_button videocall_start">
                     <img class="videocall_icon" src="images/call_icon.webp" alt="Icono videollamada">
                 </button>
+                <button class="subtitles_btn">
+                    <img class="subtitles_icon" src="images/captions.png" alt="Icono subtítulos">
+                </button>
+
             </div>
             <div class="videocall_camara">
 
@@ -281,7 +367,7 @@
                 <div class="santa_selfie">
                     <div class="selfie_info">
                         <h3 class="selfie_title">¡Conviertete en un elfo de Papá Noel!</h3>
-                        <p class="selfie_text">Haz clic en el botón para abrir la cámara y centra tu cabeza en el círculo. <br> ¡Ya estaraś listo para convertirte en elfo!</p>
+                        <p class="selfie_text">Haz clic en el botón para abrir la cámara y centra tu cara en la cámara. <br><br> ¡Ya estaraś listo para convertirte en elfo!</p>
                         <button class="open-camera_btn">Abrir cámara</button>
                     </div>
                     <div class="photo">
@@ -304,7 +390,7 @@
         </div>
 
         <div id="lists">
-            <h2 class="title lists_title">Las Listas</h2>
+            <h2 class="title lists_title">Listas de niños buenos y malos</h2>
             <div class="content lists_content">
                 <p class="search_lists"> Busca tu nombre en la lista de Papá Noel</p>
                 <div class="lists_container">
@@ -327,6 +413,7 @@
                         <div class="game1_instructions">
                             <h3 class="game1_title">¡Decora tu galleta de Navidad!</h3>
                             <p class="game1_text">Arrastra los accesorios a la galleta para decorarla. <br> <br> Eliminalos haciendo click sobre ellos</p>
+                            <button class="download-btn">Descarga Tu Galleta</button>
                         </div>
                         <div class="accessories">
                             <!-- Accesorios disponibles para arrastrar -->
@@ -356,16 +443,62 @@
                         </div>
                     </div>
                     <div id="game2" class="game">
-                
-                    </div>
-                    <div id="game3" class="game">
+                        <div class="game2_instructions">
+                            <h3 class="game2_title">¡Pictionary Navideño!</h3>
+                            <p class="game2_text">Dibuja la palabra que te ha tocado en el lienzo. <br> <br> ¡Tienes 60 segundos!</p>
+                        </div>
+                        <div class="game2_main">
+                            <div class="game2_message"></div>
+                            <canvas class="game2_canvas"></canvas>
+                            <div class="game2_palette">
+                                <button class="color-btn" style="background-color: #ff0000;"></button>
+                                <button class="color-btn" style="background-color: #00ff00;"></button>
+                                <button class="color-btn" style="background-color: #0000ff;"></button>
+                                <button class="color-btn" style="background-color: #ffff00;"></button>
+                                <button class="color-btn" style="background-color: #000000;"></button>
+                                <button class="color-btn" style="background-color: #ffffff;"></button>
+                            </div>
+                        </div>
+                        <div class="game2_controls">
 
+                            <div class="game2_word">
+                                Palabra a dibujar: <span class="random-word"></span>
+                            </div>
+                            <div class="game2_timer">
+                                Tiempo: <span class="timer_display"></span>
+                            </div>
+                            <button class="game2_start">Empezar Juego</button>
+                        </div>
+                    </div>
+
+                    <div id="game3" class="game">
+                        <div class="game3_instructions">
+                            <h3 class="game3_title">¡Protege los regalos!</h3>
+                            <p class="game3_text">Haz click en el Grinch antes de que llegue a los regalos. <br> <br> ¡Tienes 3 vidas!</p>
+                        </div>
+                        <div class="game3_stage">
+                            <div class="game3_gift">🎁</div>
+                            <div class="game3_message" style="display: none;"></div>
+                        </div>
+                        <div class="game3_controls">
+                            <div class="game3_timer">Tiempo: <span class="game3_timer-display">60</span>s</div>
+                            <div class="game3_live-display">
+                                Vidas restantes:
+                                <div class="game3_lives">
+                                
+                                </div>
+                            </div>
+                            <button class="game3_start-btn">Empezar</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <script src="scripts/games.js"></script>
             <script src="scripts/game1.js"></script>
-        </div>
+            <script src="https://cdn.jsdelivr.net/npm/html2canvas"></script>
+            <script src="scripts/game2.js"></script>
+            <script src="scripts/game3.js"></script>
+        </div>  
             
         <div id="gallery">
             <h2 class="title gallery_title">Galería</h2>
@@ -386,6 +519,7 @@
                 </div>
                 <button class="gallery_arrow gallery_arrow--right">&gt;</button>
             </div>
+            <div class="gallery_indicators"></div>
             <script src="scripts/gallery.js"></script>
 
         </div>
