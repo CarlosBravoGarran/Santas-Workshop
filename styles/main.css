@@ -53,6 +53,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 input[type="button"] {
@@ -79,3 +80,91 @@ input[type="button"] {
     align-items: center;
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+#notification-container {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notification {
+    background-color: #0077b6;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: slideDown 0.5s forwards, fadeOut 0.5s 3s forwards;
+    font-family: Arial, sans-serif;
+}
+
+.notification.error {
+    background-color: #e63946;
+}
+
+.notification.success {
+    background-color: #2a9d8f;
+}
+
+.notification.warning {
+    background-color: #f4a261;
+}
+
+.notification-text {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    height: 100%;
+}
+
+.notification-close:hover {
+    opacity: 0.8;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}

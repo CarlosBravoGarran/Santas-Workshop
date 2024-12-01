@@ -1,82 +1,96 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const calendarTabs = document.querySelectorAll('.calendar-tab');
     const calendarDays = document.querySelectorAll('.calendar-day');
     const popupOverlay = document.querySelector('.popup-overlay');
     const popupClose = document.querySelector('.popup-close');
     const popupText = document.querySelector('.popup-text');
+    const calendarContainer = document.querySelector('.calendar-container');
 
     const today = new Date();
     const currentDay = today.getDate();
     const currentMonth = today.getMonth() + 1;
 
-    // Notas para cada día
-    const notes = [
-        "Hoy es un gran día para sonreír.",
-        "¡La magia de la Navidad está en tu corazón!",
-        "Recuerda ser amable con todos.",
-        "Ayudar a los demás es un regalo especial.",
-        "Cada día cuenta para ser mejor.",
-        "¡Haz algo bonito por alguien hoy!",
-        "La Navidad es tiempo de amor y alegría.",
-        "Un abrazo puede alegrarle el día a alguien.",
-        "Los pequeños gestos hacen grandes diferencias.",
-        "¡Nunca dejes de soñar!",
-        "La felicidad se comparte con una sonrisa.",
-        "Los buenos amigos son regalos valiosos.",
-        "Haz tu mejor esfuerzo en todo lo que hagas.",
-        "La Navidad está hecha de momentos mágicos.",
-        "Ser generoso te llena el corazón.",
-        "¡Haz una buena acción hoy!",
-        "Recuerda agradecer por lo que tienes.",
-        "Los regalos más grandes no se envuelven.",
-        "Valora a quienes están a tu lado.",
-        "Cada día trae nuevas oportunidades.",
-        "Hoy es un buen día para dar las gracias.",
-        "¡Eres capaz de todo lo que sueñas!",
-        "La familia es el mejor regalo de todos.",
-        "La bondad es el mejor adorno navideño.",
-        "Hoy, haz que alguien sonría contigo."
-    ];
+    // Notas personalizadas para cada día
+    const notes = {
+        1: "Comienza la cuenta atrás. ¡Sé amable con los demás hoy!",
+        2: "Haz una buena acción por alguien que no conozcas.",
+        3: "Ayuda a decorar tu casa para la Navidad.",
+        4: "Escribe una carta a un ser querido.",
+        5: "Canta un villancico en familia.",
+        6: "Haz una lista de agradecimientos.",
+        7: "Ayuda a alguien en casa con sus tareas.",
+        8: "Prepara una receta navideña con tu familia.",
+        9: "Coloca una estrella en lo más alto de tu árbol.",
+        10: "Recuerda compartir una sonrisa hoy.",
+        11: "Dibuja una tarjeta navideña para regalar.",
+        12: "Cuenta una historia navideña a alguien especial.",
+        13: "Saluda a alguien con alegría navideña.",
+        14: "Dedica unos minutos a reflexionar sobre el año.",
+        15: "Decora tu ventana con luces o dibujos.",
+        16: "Prepara un pequeño regalo para alguien especial.",
+        17: "Envía un mensaje cariñoso a un amigo.",
+        18: "Comparte un momento de felicidad con tu familia.",
+        19: "Escribe tus deseos para el próximo año.",
+        20: "Abraza a alguien que quieres mucho.",
+        21: "Ayuda a envolver regalos navideños.",
+        22: "Prepara una canción o poema navideño.",
+        23: "Pasa tiempo con tus seres queridos.",
+        24: "¡La Navidad está aquí! Prepárate para disfrutar.",
+        25: "¡Feliz Navidad! Comparte tu alegría con todos."
+    };
 
-    // Bloquear casillas futuras
-    calendarTabs.forEach(tab => {
-        const dayNumber = parseInt(tab.dataset.day, 10);
+    // Reordenar casillas aleatoriamente
+    const calendarElements = Array.from(calendarContainer.children);
+    shuffleArray(calendarElements);
+    calendarContainer.innerHTML = ''; // Vaciar el contenedor
+    calendarElements.forEach(elem => calendarContainer.appendChild(elem)); // Agregar casillas
 
-        if ((dayNumber > currentDay) || (currentMonth !== 11)) {
-            tab.classList.add('locked'); // Clase estilos de bloqueo
-            tab.disabled = true; // Deshabilitar funcionalidad
+    // Barajar el array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
         }
-    });
+    }
 
-    // Abrir el popup
+    // Clic en las pestañas
     calendarTabs.forEach(tab => {
         tab.addEventListener('click', (e) => {
             e.stopPropagation();
+            const dayNumber = parseInt(tab.dataset.day, 10);
 
-            if (!tab.classList.contains('opened') && !tab.classList.contains('locked')) {
-                tab.classList.add('opened'); // Abrir la pestaña
-                disableHover(tab); // Desactivar hover al abrir la pestaña
-                showPopup(tab.dataset.day); // Mostrar el popup
+            // Verificar si es un día futuro
+            if (dayNumber > 11 || currentMonth !== 11) {
+                showPopup("Todavía no hemos llegado a ese día, no lo puedes abrir todavía.", true);
+                return;
+            }
+
+            // Abrir pestaña si no está abierta
+            if (!tab.classList.contains('opened')) {
+                tab.classList.add('opened');
+                disableHover(tab);
+                showPopup(notes[dayNumber], false);
             }
         });
     });
 
-    // Cerrar la pestaña
+    // Cerrar la pestaña al hacer clic en la casilla correspondiente
     calendarDays.forEach(day => {
         day.addEventListener('click', () => {
             const tab = day.querySelector('.calendar-tab');
             if (tab && tab.classList.contains('opened')) {
-                tab.classList.remove('opened'); // Cerrar la pestaña
-                enableHover(tab); // Reactivar hover
+                tab.classList.remove('opened');
+                enableHover(tab);
             }
         });
     });
 
-    // Mostrar la nota del día
-    function showPopup(dayNumber) {
-        const noteIndex = parseInt(dayNumber, 10) - 1; // Obtener índice del día
-        popupText.textContent = notes[noteIndex] || "¡Disfruta de este día especial!"; // Mostrar nota
-        popupOverlay.style.display = 'flex'; // Mostrar el popup
+    // Mostrar mensaje en el popup
+    function showPopup(message, isBlocked) {
+        popupText.textContent = message;
+        popupText.classList.toggle('blocked', isBlocked); // Cambiar color para días futuros
+        popupOverlay.style.display = 'flex';
     }
 
     // Cerrar el popup al hacer clic en la "x"
@@ -93,13 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Desactivar temporalmente el hover de una pestaña al abrir
     function disableHover(tab) {
-        tab.classList.add('no-hover'); // Añadir clase que desactiva el hover
+        tab.classList.add('no-hover');
     }
 
     // Reactivar el hover de una pestaña después de cerrarla
     function enableHover(tab) {
         setTimeout(() => {
-            tab.classList.remove('no-hover'); // Quitar clase después de 2 segundos
+            tab.classList.remove('no-hover');
         }, 2000);
     }
 });

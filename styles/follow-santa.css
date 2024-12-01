@@ -47,11 +47,16 @@
     gap: 10px;
 }
 
+
 .country-search {
     padding: 5px;
     font-size: 14px;
     width: 200px;
     border-radius: 8px;
+}
+
+.country-search:hover {
+    cursor: text;
 }
 
 .search-btn {
