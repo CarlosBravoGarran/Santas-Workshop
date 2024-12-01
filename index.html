@@ -261,11 +261,11 @@
                 <div class="search-container">
                     <input type="text" class="country-search" placeholder="Escribe un país" />
                     <button class="search-btn">Calcular distancia</button>
-                    <button class="locate-santa-btn">¿Dónde está Santa?</button>
                 </div>
                 <div class="map-container">
                     <div id="map"></div>
                 </div>
+                <button class="locate-santa-btn">¿Dónde está Santa?</button>
             </div>
             <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
             <script src="scripts/follow-santa.js"></script>
@@ -345,6 +345,7 @@
         <div id="elf-name">
             <h2 class="title elf-name_title">Tu Nombre de Elfo</h2>
             <div class="content elf-name_content">
+                <img class="elf-name_image" src="images/gif-elfo.gif" alt="Imagen de un elfo">
                 <div class = "elf-name_info">
                     <h3 class="elf-name_info_title">¡Descubre tu nombre de elfo!</h3>
                     <p class="elf-name_info_text">Introduce tu nombre y descubre cuál sería tu nombre si fueras un elfo de Papá Noel</p>
@@ -353,7 +354,7 @@
                         <input type="text" id="elf-name_input" name="elf-name_input" placeholder="Tu nombre" required>
                         <button class="elf-name_button" onclick="generateElfName()">Generar nombre de elfo</button>
                     </div>
-                    <div class="elf-name_result">
+                    <div class="elf-name_output">
                         <h3 class="elf-name_result_title">Tu nombre de elfo es:</h3>
                         <p class="elf-name_result_class" id = "elf-name_result"></p>
                     </div>
@@ -367,7 +368,7 @@
                 <div class="santa_selfie">
                     <div class="selfie_info">
                         <h3 class="selfie_title">¡Conviertete en un elfo de Papá Noel!</h3>
-                        <p class="selfie_text">Haz clic en el botón para abrir la cámara y centra tu cabeza en el círculo. <br> ¡Ya estaraś listo para convertirte en elfo!</p>
+                        <p class="selfie_text">Haz clic en el botón para abrir la cámara y centra tu cara en la cámara. <br><br> ¡Ya estaraś listo para convertirte en elfo!</p>
                         <button class="open-camera_btn">Abrir cámara</button>
                     </div>
                     <div class="photo">
@@ -519,6 +520,7 @@
                 </div>
                 <button class="gallery_arrow gallery_arrow--right">&gt;</button>
             </div>
+            <div class="gallery_indicators"></div>
             <script src="scripts/gallery.js"></script>
 
         </div>
