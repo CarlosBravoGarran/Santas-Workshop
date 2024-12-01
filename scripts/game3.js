@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(moveInterval);
             grinch.remove();
         });
+
     }
 
     // Perder una vida
@@ -103,12 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
             livesContainer.removeChild(livesContainer.lastElementChild);
         }
         if (lives === 0) {
-            endGame(false);
+            endGame3(false);
         }
     }
 
     // Finalizar el juego
-    function endGame(won) {
+    function endGame3(won) {
         clearInterval(gameInterval);
 
         document.querySelectorAll('.grinch').forEach(grinch => grinch.remove());
@@ -123,6 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         startButton.disabled = false;
     }
+
+    window.endGame3 = endGame3;
 
     // Iniciar el juego
     function startGame() {
@@ -141,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timerDisplay.textContent = timeLeft;
 
             if (timeLeft <= 0) {
-                endGame(true);
+                endGame3(true);
             } else {
                 spawnGrinch();
             }
