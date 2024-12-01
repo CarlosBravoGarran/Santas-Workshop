@@ -7,6 +7,12 @@
     align-items: center;
 }
 
+.elf-name_image{
+    width: 10%;
+    max-width: 70%;
+    height: 30%;
+}
+
 .elf-name_info{
     width: 60%;
     max-width: 70%;
@@ -41,4 +47,14 @@
     background-color: #aaf;
     color: #f5f5f5;
     cursor: pointer;
+}
+
+@font-face {
+    font-family: 'Elf';
+    src: url('fonts/ChristmasSnowflake-Italic.ttf') format('truetype');
+}
+
+.elf-name_result_class{
+    font-family: 'Elf';
+    color: black;
 }
