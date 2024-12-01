@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="icon" href="images/icon.png" type="image/png">
     <script src="scripts/elf-name.js"></script> 
+    <script src="scripts/footer.js"></script>
 </head>
 </head>
 <body>
@@ -549,6 +550,24 @@
                 <a class= "politica_privacidad" target= "_blank" href="https://portal.mineco.gob.es/es-es/ministerio/Paginas/Politica_de_privacidad.aspx"><p> Pólitica de privacidad </p></a>
                 <p> Todos los derechos reservados </p>
                 <p> ¡Mantente informado! </p>
+            </div>
+        </div>
+        <button class="help-button" onclick="togglePopup()">❓</button>
+        <div id="help-popup" class="popup hidden">
+            <div class="popup-content">
+                <span class="close-button" onclick="togglePopup()">x</span>
+                <h3>¿En qué necesitas ayuda?</h3>
+                <form>
+                    <div>
+                        <label for="consulta">Describe tu problema:</label>
+                        <textarea class = "caja_escribir_ayuda" id="consulta" name="consulta" rows="4" required></textarea>
+                    </div>
+                    <div>
+                        <label for="email">Escribe tu correo electrónico para poder responderte:</label>
+                        <input class = "caja_escribir_ayuda" type="email" id="email" name="email" required>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
             </div>
         </div>
     </footer>
