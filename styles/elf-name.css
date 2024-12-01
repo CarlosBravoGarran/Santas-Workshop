@@ -1,7 +1,7 @@
 
 #elf-name{
     height: 100vh;
-    background-color: var(--color-background-box);
+    background-color: var(--color-background-global);
     display: flex;
     flex-direction: column;
     align-items: center;
