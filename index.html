@@ -275,41 +275,41 @@
         <div id="letters">
             <h2 class="title letters_title">Envía tu carta</h2>
             <div class="content letters_content">
-                <div class="formulario_section"> 
-                    <form action="" class="formulario_enviar_carta" id="formulario_mi_carta">
-                        <div class="nom_email">
-                            <div class="caja_label">
-                                <label class="nombre_etiqueta" for="nombre">Nombre *</label> 
-                                <input class="formulario_input" id="nombre" type="text" required minlength="3" placeholder="Nombre">
-                            </div>
-                            <div class="caja_label">
-                                <label class="nombre_etiqueta" for="email">Email *</label>
-                                <input class="formulario_input" id="email" type="email" required placeholder="Email">
-                            </div>
-                        </div> 
-                        <div class="lugar">
-                            <div class="caja_label">
-                                <label class="nombre_etiqueta" for="ciudad">Ciudad *</label>
-                                <input class="formulario_input" id="ciudad" type="text" required placeholder="Ciudad">
-                            </div>
-                            <div class="caja_label">
-                                <label class="nombre_etiqueta" for="pais">País *</label>
-                                <input class="formulario_input" id="pais" type="text" required placeholder="País">
-                            </div>
-                        </div> 
-                        <div class="mi_carta"> 
-                            <div class="caja_label">
-                                <label class="nombre_etiqueta" for="carta">Carta para Papá Noél *</label>
-                                <textarea class="formulario_input_mi_carta" id="carta" required placeholder="Escribe tu carta"></textarea>
-                            </div>
-                        </div> 
-                        <div class="boton_enviar">
-                            <button class="formulario_submit" onclick="enviarCarta()">
-                                Enviar
-                            </button>
+                <!-- <img class="sello-image" src="images/sello_santa.webp" alt="Sello de Santa"> -->
+                <form action="" class="formulario_enviar_carta" id="formulario_mi_carta">
+                    <div class="nom_email">
+                        <div class="caja_label">
+                            <label class="nombre_etiqueta" for="nombre">Nombre *</label> 
+                            <input class="formulario_input" id="nombre" type="text" required minlength="3" placeholder="Nombre">
                         </div>
-                    </form>
-                </div>
+                        <div class="caja_label">
+                            <label class="nombre_etiqueta" for="email">Email *</label>
+                            <input class="formulario_input" id="email" type="email" required placeholder="Email">
+                        </div>
+                    </div> 
+                    <div class="lugar">
+                        <div class="caja_label">
+                            <label class="nombre_etiqueta" for="ciudad">Ciudad *</label>
+                            <input class="formulario_input" id="ciudad" type="text" required placeholder="Ciudad">
+                        </div>
+                        <div class="caja_label">
+                            <label class="nombre_etiqueta" for="pais">País *</label>
+                            <input class="formulario_input" id="pais" type="text" required placeholder="País">
+                        </div>
+                    </div> 
+                    <div class="mi_carta"> 
+                        <div class="caja_label">
+                            <label class="nombre_etiqueta" for="carta">Carta para Papá Noél *</label>
+                            <textarea class="formulario_input_mi_carta" id="carta" required placeholder="Escribe tu carta"></textarea>
+                        </div>
+                    </div> 
+                    <div class="boton_enviar">
+                        <button class="formulario_submit" onclick="enviarCarta()">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+           
             </div>
             <div id="popup-carta-exito" class="popup-carta hidden">
                 <div class="popup-carta-content">
