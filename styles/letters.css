@@ -7,17 +7,42 @@
     align-items: center;
 }
 
+.sello-image{
+    position: absolute;
+    width: 15%;
+    transform: translateX(300px) translateY(-250px);
+}
+
+@media screen and (max-width:900px){
+    .sello-image{    
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .sello-image{    
+        width: 25%;
+        transform: translateX(250px) translateY(-250px);
+    }
+}
+
+@media screen and (max-width:650px){
+    .sello-image{    
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .sello-image{    
+        transform: translateX(200px) translateY(-250px);
+    }
+}
+
 .formulario_enviar_carta{
     padding: 60px;
     background-color: var(--color-background-box);
     border-radius: 20px;
     width: 80vh;
-}
-
-.sello-image{
-    position: absolute;
-    width: 20%;
-    transform: translateX(300px) translateY(-250px);
 }
 
 @media screen and (max-width:768px){
@@ -157,4 +182,46 @@
 
 .formulario_submit:active {
     box-shadow: inset 4px 4px 1px rgba(0, 0, 0);
+}
+
+.carta_santa {
+    display: none;
+    position: fixed;
+    top: 100px;
+    right: 5px;
+    border: none;
+    width: 60px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.carta-personalizada {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-popup);
+    color: var(--color-text2);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    border-radius: 8px;
+    width: 600px;
+    max-width: 80%;
+    text-align: center;
+    font-size: clamp(0.7rem, 1.9vw, 1rem);
+}
+
+.cerrar-carta {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: var(--color-text2);
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
 }
