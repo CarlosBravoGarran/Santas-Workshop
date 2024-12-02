@@ -3,12 +3,17 @@ function togglePopupAyuda() {
     popup.classList.toggle('hidden');
 }
 
-function closeRespuestaPopup() {
-    document.getElementById('help-answer').classList.add('hidden');
-}
+const enviarMensajeAyuda = (event) => {
+    event.preventDefault();
 
-function handleFormSubmit(event) {
-    event.preventDefault(); 
-    document.getElementById('help-popup').classList.add('hidden'); 
-    document.getElementById('help-answer').classList.remove('hidden');
+    const consulta = document.getElementById('consulta').value;
+    const email = document.getElementById('email').value;
+
+    if (consulta && email) {
+        showNotification('Tu mensaje ha sido enviado con éxito. En breve recibirás una respuesta.', 'success');
+        togglePopupAyuda();
+        document.getElementById('help-form').reset();
+    } else {
+        showNotification('Por favor completa todos los campos.', 'warning');
+    }
 }
