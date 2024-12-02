@@ -29,11 +29,16 @@
                 <img class="search-icon" src="images/search_icon.webp" alt="Icono lupa búsqueda">
                 <ul class="suggestions" id="suggestions"></ul>
             </div>
-                
         </div>
         <div class="web-name">
             <h2><a class="web-name_text" href="#home">El taller de Papá Noel</a></h2>
             <img class="web-name_logo" src="images/logo.png" alt="Logo gorro de Papá Noél">
+        </div>
+        <div class="nav-bar_modo-oscuro">
+            <label class="switch">
+                <input type="checkbox" id="modoOscuroSwitch">
+                <span class="slider"></span>
+            </label>
         </div>
         <div class="nav-bar_access">
             <div class="access_menu">
@@ -311,6 +316,7 @@
                     </div>
                 </form>
             </div>
+            <img class="carta_santa" src="images/carta_santa.png" alt="Carta de Santa">
         </div>
         <div id="videocall">
             <h2 class="title videocall_title">Videollamada</h2>
@@ -579,7 +585,7 @@
             <div class="popup-ayuda-content">
                 <span class="close-ayuda-button" onclick="togglePopupAyuda()">x</span>
                 <h3>¿En qué necesitas ayuda?</h3>
-                <form  onsubmit="handleFormSubmit(event)">
+                <form  id= "help-form" onsubmit="enviarMensajeAyuda(event)">
                     <div>
                         <label for="consulta">Describe tu problema:</label>
                         <textarea class = "caja-escribir-ayuda" id="consulta" name="consulta" rows="4" required placeholder="Escribe aquí tu problema"></textarea>
@@ -594,13 +600,6 @@
                 </form>
             </div>
         </div>
-        <div id="help-answer" class="popup-respuesta-ayuda hidden">
-            <div class="popup-respuesta-ayuda-content">
-                <h3>¡Mensaje enviado con éxito!</h3>
-                <p>En breve recibirás una respuesta.</p>
-                <button onclick="closeRespuestaPopup()">x</button>
-            </div>
-        </div>        
     </footer>
 </body>
 </html>
