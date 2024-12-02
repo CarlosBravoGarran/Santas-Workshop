@@ -1,18 +1,114 @@
 
 #lists{
     height: 100vh;
-    background-color: var(--color-background-box);
+    background-color: var(--color-background-global);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.lists__container{
+.lists_background{
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--color-background-box);
+    padding: 20px;
+    border-radius: 20px;
+}
+.search_container{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+.search_lists{
     width: 100%;
-    max-width: 1200px;
+}
+
+#search_name{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.search_btn{
+    padding: 10px;
+    border: 1px solid var(--color-background-box);
+    border-radius: 5px;
+    background-color: var(--color-button1);
+    color: var(--color-text1);
+    cursor: pointer;
+    box-shadow: 4px 4px 1px rgba(0, 0, 0);
+    border-radius: 8px;
+    border: 1px solid #000;
+    transition: all 0.2s ease-in-out;
+}
+
+.search_btn:active{
+    box-shadow: inset 4px 4px 1px rgba(0, 0, 0);
+}
+
+.lists_container{
+    width: 30%;
+    height: 50%; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-    color: #aaf;
+    background-color: var(--color-background-box);
+    border-radius: 20px;
+}
+
+.btn_listas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    gap: 20px;
+}
+
+.goodlist_btn{
+    padding: 10px;
+    border: 1px solid var(--color-background-box);
+    border-radius: 5px;
+    background-color: var(--color-button1);
+    color: var(--color-text1);
+    cursor: pointer;
+    box-shadow: 4px 4px 1px rgba(0, 0, 0);
+    border-radius: 8px;
+    border: 1px solid #000;
+    transition: all 0.2s ease-in-out;
+}
+
+.goodlist_btn:active{
+    box-shadow: inset 4px 4px 1px rgba(0, 0, 0);
+}
+
+.badlist_btn{
+    padding: 10px;
+    border: 1px solid var(--color-background-box);
+    border-radius: 5px;
+    background-color: var(--color-button2);
+    color: var(--color-text1);
+    cursor: pointer;
+    box-shadow: 4px 4px 1px rgba(0, 0, 0);
+    border-radius: 8px;
+    border: 1px solid #000;
+    transition: all 0.2s ease-in-out;
+}
+
+.badlist_btn:active{
+    box-shadow: inset 4px 4px 1px rgba(0, 0, 0);
 }

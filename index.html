@@ -354,14 +354,16 @@
                 <div class = "elf-name_info">
                     <h3 class="elf-name_info_title">¡Descubre tu nombre de elfo!</h3>
                     <p class="elf-name_info_text">Introduce tu nombre y descubre cuál sería tu nombre si fueras un elfo de Papá Noel</p>
-                    <div class="elf-name_form">
-                        <label for="elf-name_input">Introduce tu nombre</label>
-                        <input type="text" id="elf-name_input" name="elf-name_input" placeholder="Tu nombre" required>
-                        <button class="elf-name_button" onclick="generateElfName()">Generar nombre de elfo</button>
-                    </div>
-                    <div class="elf-name_output">
-                        <h3 class="elf-name_result_title">Tu nombre de elfo es:</h3>
-                        <p class="elf-name_result_class" id = "elf-name_result"></p>
+                    <div class = "elf-name_input-output">
+                        <div class="elf-name_form">
+                            <label for="elf-name_input">Introduce tu nombre</label>
+                            <input type="text" id="elf-name_input" name="elf-name_input" placeholder="Tu nombre" required>
+                            <button class="elf-name_button" onclick="generateElfName()">Generar nombre de elfo</button>
+                        </div>
+                        <div class="elf-name_output">
+                            <h3 class="elf-name_result_title">Tu nombre de elfo es:</h3>
+                            <p class="elf-name_result_class" id = "elf-name_result"></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -397,10 +399,20 @@
 
         <div id="lists">
             <h2 class="title lists_title">Listas de niños buenos y malos</h2>
-            <div class="content lists_content">
-                <p class="search_lists"> Busca tu nombre en la lista de Papá Noel</p>
-                <div class="lists_container">
+            <div class="lists_background">
+                <div class="content lists_content">
+                    <div class="search_container">
+                        <p class="search_lists"> ¡Escribe tu nombre y descubre el gran secreto! ¿Estás en la lista de los niños buenos o en la de los traviesos? ¡Papá Noel lo sabe todo!</p>
+                        <input type="text" id="search_name" placeholder="Escribe tu nombre"/>
+                        <button class="search_btn">Buscar</button>
+                    </div>
+                    <div class="btn_listas">
+                        <button class="goodlist_btn">Lista de niños buenos</button>
+                        <button class="badlist_btn">Lista de niños traviesos</button>
+                    </div>
+                    <div class="lists_container">
 
+                    </div>
                 </div>
             </div>
         </div>
