@@ -122,3 +122,37 @@
     text-align: center;
     z-index: 10;
 }
+
+
+@media screen and (max-width: 768px) {
+    
+    #game3 {
+        flex-direction: column;
+    }
+
+    .game3_instructions {
+        width: 90%;
+    }
+
+    .game3_stage {
+        width: 90%;
+        height: 50%;
+    }
+
+    .game3_life {
+        width: 30px;
+        height: 30px;
+        font-size: 2rem;
+    }
+
+    .game3_controls {
+        flex-direction: row;
+        width: 90%;
+    }
+
+    .game3_start-btn {
+        width: 30%;
+        margin: 0;
+        overflow: hidden;
+    }
+}

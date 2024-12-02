@@ -16,14 +16,14 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 80%;
+    width: 85%;
     flex-wrap: wrap;
 }
 
 .game_buttons.open{
     flex-direction: row;
     margin: 20px 0;
-    width: 55%;
+    width: 65%;
 }
 
 .game_buttons.open > .game_btn, .game_buttons.open > .close-game_btn{
