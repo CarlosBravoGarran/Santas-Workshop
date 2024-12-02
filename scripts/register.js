@@ -38,12 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('register-password').value.trim();
         const confirmPassword = document.getElementById('register-password-confirm').value.trim();
 
-        // Validar que los campos no estén vacíos
-        if (!name || !email || !password || !confirmPassword) {
-            showNotification('Por favor, completa todos los campos.', 'warning');
-            return;
-        }
-
         // Validar formato del correo electrónico
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
