@@ -119,6 +119,8 @@ function addToList() {
     }
 }
 
-document.getElementById("btn-search").addEventListener("click", addToList);
-document.getElementById("btn-good-list").addEventListener("click", showGoodList);
-document.getElementById("btn-bad-list").addEventListener("click", showBadList);
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("btn-search").addEventListener("click", addToList);
+    document.getElementById("btn-good-list").addEventListener("click", showGoodList);
+    document.getElementById("btn-bad-list").addEventListener("click", showBadList);
+});
