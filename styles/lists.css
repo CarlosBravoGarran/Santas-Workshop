@@ -59,14 +59,46 @@
 }
 
 .lists_container{
+    display: none;
     width: 30%;
-    height: 50%; 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    background-color: #f9e4b7; 
+    border: 1px solid #d4af37; 
+    border-radius: 10px; 
     padding: 20px;
-    background-color: var(--color-background-box);
-    border-radius: 20px;
+    color: #b38b00; 
+    font-family: 'Georgia', serif; 
+    line-height: 1.5; 
+    max-width: 600px; 
+    margin: 20px auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 300px;
+}
+
+.lists_container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 24px,
+        #c9b037 25px
+    ); 
+    z-index: 0;
+    pointer-events: none;
+    height: calc(100% + 600px);
+}
+
+.lists_container > * {
+    position: relative;
+    z-index: 1; 
 }
 
 .btn_listas{
@@ -111,4 +143,21 @@
 
 .badlist_btn:active{
     box-shadow: inset 4px 4px 1px rgba(0, 0, 0);
+}
+
+.titulo_niños{
+    margin-block-start: 0.5em;
+}
+
+.lista_niños{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.lista_niños li{
+    line-height: 25px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
 }

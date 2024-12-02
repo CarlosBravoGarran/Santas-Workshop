@@ -13,6 +13,7 @@
     <link rel="icon" href="images/icon.png" type="image/png">
     <script src="scripts/elf-name.js"></script> 
     <script src="scripts/footer.js"></script>
+    <script src="scripts/lists.js" defer></script>
 </head>
 </head>
 <body>
@@ -399,13 +400,13 @@
                     <div class="search_container">
                         <p class="search_lists"> ¡Escribe tu nombre y descubre el gran secreto! ¿Estás en la lista de los niños buenos o en la de los traviesos? ¡Papá Noel lo sabe todo!</p>
                         <input type="text" id="search_name" placeholder="Escribe tu nombre"/>
-                        <button class="search_btn">Buscar</button>
+                        <button class="search_btn" id = "btn-search">Buscar</button>
                     </div>
                     <div class="btn_listas">
-                        <button class="goodlist_btn">Lista de niños buenos</button>
-                        <button class="badlist_btn">Lista de niños traviesos</button>
+                        <button class="goodlist_btn" id="btn-good-list">Lista de niños buenos</button>
+                        <button class="badlist_btn" id="btn-bad-list">Lista de niños traviesos</button>
                     </div>
-                    <div class="lists_container">
+                    <div class="lists_container" id="list-output">
 
                     </div>
                 </div>
