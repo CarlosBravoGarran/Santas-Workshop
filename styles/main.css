@@ -14,11 +14,6 @@
     --color-button4: #b48660;
     --color-cursor: #FF4;
     --color-popup: #e7d77ff9;
-
-    /* Colores para el modo oscuro */
-    --color-text1-oscuro: #d4bfbf;
-    --color-background-global-oscuro: #251819;
-    --color-popup-oscuro: #382f24;
 }
 
 *{
