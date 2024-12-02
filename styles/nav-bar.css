@@ -6,7 +6,7 @@
 
 .nav-bar{
     width: 100%;
-    height: 7%;
+    height: 10%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,7 +16,6 @@
     color: var(--color-text1);
     position: fixed;
     top: 0;
-    padding: 20px;
 }
 
 .nav-bar_icons{
@@ -514,6 +513,9 @@
 
 @media (max-width: 600px) {
 
+    .nav-bar{
+        height: 12%;
+    }
 
     .nav-bar_icons {
         justify-content: center;
@@ -549,6 +551,10 @@
         margin-top: 10px;
     }
 
+    .access_menu.open {
+        top: 30px;
+    }
+
     .access_register, .access_login {
         width: 80%;
         margin: 10px 0;
@@ -558,5 +564,13 @@
     .register-popup, .login-popup {
         width: 70%;
         
+    }
+
+    .menu{
+        width: 50%;
+    }
+
+    .search-bar{
+        display: none;
     }
 }

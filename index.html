@@ -13,6 +13,7 @@
     <link rel="icon" href="images/icon.png" type="image/png">
     <script src="scripts/elf-name.js"></script> 
     <script src="scripts/footer.js"></script>
+    <script src="scripts/letters.js"></script>
 </head>
 </head>
 <body>
@@ -274,42 +275,40 @@
         <div id="letters">
             <h2 class="title letters_title">Envía tu carta</h2>
             <div class="content letters_content">
-                <div class="formulario_section"> 
-                    <form action="" class="formulario_enviar_carta" id="formulario_mi_carta">
-                        <div class="nom_email">
-                            <div class="caja_label">
-                                <label class="nombre_etiqueta" for="nombre">Nombre *</label> 
-                                <input class="formulario_input" id="nombre" type="text" required minlength="3" placeholder="Nombre">
-                            </div>
-                            <div class="caja_label">
-                                <label class="nombre_etiqueta" for="email">Email *</label>
-                                <input class="formulario_input" id="email" type="email" required placeholder="Email">
-                            </div>
-                        </div> 
-                        <div class="lugar">
-                            <div class="caja_label">
-                                <label class="nombre_etiqueta" for="ciudad">Ciudad *</label>
-                                <input class="formulario_input" id="ciudad" type="text" required placeholder="Ciudad">
-                            </div>
-                            <div class="caja_label">
-                                <label class="nombre_etiqueta" for="pais">País *</label>
-                                <input class="formulario_input" id="pais" type="text" required placeholder="País">
-                            </div>
-                        </div> 
-                        <div class="mi_carta"> 
-                            <div class="caja_label">
-                                <label class="nombre_etiqueta" for="carta">Carta para Papá Noél *</label>
-                                <textarea class="formulario_input_mi_carta" id="carta" required placeholder="Escribe tu carta"></textarea>
-                            </div>
-                        </div> 
-                        <div class="boton_enviar">
-                            <button class="formulario_submit" onclick="enviar_carta()">
-                                Enviar
-                            </button>
+                <img class="sello-image" src="images/sello_santa.webp" alt="Sello de Santa">
+                <form action="" class="formulario_enviar_carta" id="formulario_mi_carta">
+                    <div class="nom_email">
+                        <div class="caja_label">
+                            <label class="nombre_etiqueta" for="nombre">Nombre *</label> 
+                            <input class="formulario_input" id="nombre" type="text" minlength="3" placeholder="Nombre" required>
                         </div>
-                    </form>
-                </div>
-
+                        <div class="caja_label">
+                            <label class="nombre_etiqueta" for="letter_email">Email *</label>
+                            <input class="formulario_input" id="letter_email" type="email" placeholder="Email" required>
+                        </div>
+                    </div> 
+                    <div class="lugar">
+                        <div class="caja_label">
+                            <label class="nombre_etiqueta" for="ciudad">Ciudad *</label>
+                            <input class="formulario_input" id="ciudad" type="text" placeholder="Ciudad" required>
+                        </div>
+                        <div class="caja_label">
+                            <label class="nombre_etiqueta" for="pais">País *</label>
+                            <input class="formulario_input" id="pais" type="text" placeholder="País" required>
+                        </div>
+                    </div> 
+                    <div class="mi_carta"> 
+                        <div class="caja_label">
+                            <label class="nombre_etiqueta" for="carta">Carta para Papá Noél *</label>
+                            <textarea class="formulario_input_mi_carta" id="carta" placeholder="Escribe tu carta" required></textarea>
+                        </div>
+                    </div> 
+                    <div class="boton_enviar">
+                        <button class="formulario_submit" type="submit">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
         <div id="videocall">
@@ -425,33 +424,34 @@
                     <div id="game1" class="game">
                         <div class="game1_instructions">
                             <h3 class="game1_title">¡Decora tu galleta de Navidad!</h3>
-                            <p class="game1_text">Arrastra los accesorios a la galleta para decorarla. <br> <br> Eliminalos haciendo click sobre ellos</p>
+                            <p class="game1_text">Arrastra los accesorios a la galleta para decorarla. Eliminalos haciendo click sobre ellos</p>
                             <button class="download-btn">Descarga Tu Galleta</button>
                         </div>
-                        <div class="accessories">
-                            <!-- Accesorios disponibles para arrastrar -->
-                            <div class="accessory" draggable="true">
-                                <img class="acc-img" src="images/chip.png" alt="Chip de chocolate" />
+                        <div class="game1_main">
+                            <div class="accessories">
+                                <div class="accessory" draggable="true">
+                                    <img class="acc-img" src="images/chip.png" alt="Chip de chocolate" />
+                                </div>
+                                <div class="accessory" draggable="true" data-accesory="tree">
+                                    <img class="acc-img" src="images/tree.png" alt="Arbol de galleta" />
+                                </div>
+                                <div class="accessory" draggable="true">
+                                    <img class="acc-img" src="images/white-star.png" alt="Estrella blanca de galleta" />
+                                </div>
                             </div>
-                            <div class="accessory" draggable="true" data-accesory="tree">
-                                <img class="acc-img" src="images/tree.png" alt="Arbol de galleta" />
+                            <div class="gingerbread">
+                                    <img src="images/cookie.webp" alt="Galleta base" />
                             </div>
-                            <div class="accessory" draggable="true">
-                                <img class="acc-img" src="images/white-star.png" alt="Estrella blanca de galleta" />
-                            </div>
-                        </div>
-                        <div class="gingerbread">
-                                <img src="images/cookie.webp" alt="Galleta base" />
-                        </div>
-                        <div class="accessories">
-                            <div class="accessory" draggable="true">
-                                <img class="acc-img" src="images/star.png" alt="Estrella de galleta" />
-                            </div>
-                            <div class="accessory" draggable="true">
-                                <img class="acc-img" src="images/green-gum.png" alt="Golosina verde" />
-                            </div>
-                            <div class="accessory" draggable="true">
-                                <img class="acc-img" src="images/red-gum.png" alt="Golosina roja" />
+                            <div class="accessories">
+                                <div class="accessory" draggable="true">
+                                    <img class="acc-img" src="images/star.png" alt="Estrella de galleta" />
+                                </div>
+                                <div class="accessory" draggable="true">
+                                    <img class="acc-img" src="images/green-gum.png" alt="Golosina verde" />
+                                </div>
+                                <div class="accessory" draggable="true">
+                                    <img class="acc-img" src="images/red-gum.png" alt="Golosina roja" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -566,24 +566,33 @@
                 <p> ¡Mantente informado! </p>
             </div>
         </div>
-        <button class="help-button" onclick="togglePopup()">❓</button>
-        <div id="help-popup" class="popup hidden">
-            <div class="popup-content">
-                <span class="close-button" onclick="togglePopup()">x</span>
+        <button class="help-button" onclick="togglePopupAyuda()">❓</button>
+        <div id="help-popup" class="popup-ayuda hidden">
+            <div class="popup-ayuda-content">
+                <span class="close-ayuda-button" onclick="togglePopupAyuda()">x</span>
                 <h3>¿En qué necesitas ayuda?</h3>
-                <form>
+                <form  onsubmit="handleFormSubmit(event)">
                     <div>
                         <label for="consulta">Describe tu problema:</label>
-                        <textarea class = "caja_escribir_ayuda" id="consulta" name="consulta" rows="4" required></textarea>
+                        <textarea class = "caja-escribir-ayuda" id="consulta" name="consulta" rows="4" required placeholder="Escribe aquí tu problema"></textarea>
                     </div>
                     <div>
-                        <label for="email">Escribe tu correo electrónico para poder responderte:</label>
-                        <input class = "caja_escribir_ayuda" type="email" id="email" name="email" required>
+                        <label for="email">Escribe tu correo electrónico para contactar contigo cuanto antes:</label>
+                        <input class = "caja-escribir-ayuda" type="email" id="email" name="email" required placeholder="Email">
                     </div>
-                    <button type="submit">Enviar</button>
+                    <div class="boton-ayuda-enviar">
+                        <button type="submit">Enviar</button>
+                    </div>
                 </form>
             </div>
         </div>
+        <div id="help-answer" class="popup-respuesta-ayuda hidden">
+            <div class="popup-respuesta-ayuda-content">
+                <h3>¡Mensaje enviado con éxito!</h3>
+                <p>En breve recibirás una respuesta.</p>
+                <button onclick="closeRespuestaPopup()">x</button>
+            </div>
+        </div>        
     </footer>
 </body>
 </html>
