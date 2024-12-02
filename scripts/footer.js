@@ -8,7 +8,7 @@ function closeRespuestaPopup() {
 }
 
 function handleFormSubmit(event) {
-    event.preventDefault(); // Evita la recarga de la página
-    document.getElementById('help-popup').classList.add('hidden'); // Cierra el popup de ayuda
-    document.getElementById('help-answer').classList.remove('hidden'); // Muestra el popup de confirmación
+    event.preventDefault(); 
+    document.getElementById('help-popup').classList.add('hidden'); 
+    document.getElementById('help-answer').classList.remove('hidden');
 }

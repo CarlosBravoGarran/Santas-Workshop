@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mostrarSobre = (nombre, ciudad, pais) => {
         cartaSanta.style.display = 'block'; 
-
-        // Aseguramos que el click usa los valores correctos usando una función anónima
         cartaSanta.addEventListener('click', () => mostrarCarta(nombre, ciudad, pais));
     };
 
@@ -28,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         document.body.appendChild(cartaDiv);
 
-        // Cerrar carta y ocultar el sobre
         cartaDiv.querySelector('.cerrar-carta').addEventListener('click', () => {
             cartaDiv.remove();
             cartaSanta.style.display = 'none'; 
@@ -46,8 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.isUserLoggedIn()) {
             showNotification('Tu carta ha sido enviada con éxito. En breve recibirás una respuesta.', 'success');
             document.querySelector('.formulario_enviar_carta').reset();
-
-            // Mostrar el sobre después de 3 segundos pasando los valores
             setTimeout(() => mostrarSobre(nombre, ciudad, pais), 3000);
 
         } else {
@@ -55,6 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Enviar carta
     enviarCartaButton?.addEventListener('submit', enviarCarta);
 });
