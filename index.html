@@ -280,48 +280,35 @@
                     <div class="nom_email">
                         <div class="caja_label">
                             <label class="nombre_etiqueta" for="nombre">Nombre *</label> 
-                            <input class="formulario_input" id="nombre" type="text" required minlength="3" placeholder="Nombre">
+                            <input class="formulario_input" id="nombre" type="text" minlength="3" placeholder="Nombre" required>
                         </div>
                         <div class="caja_label">
-                            <label class="nombre_etiqueta" for="email">Email *</label>
-                            <input class="formulario_input" id="email" type="email" required placeholder="Email">
+                            <label class="nombre_etiqueta" for="letter_email">Email *</label>
+                            <input class="formulario_input" id="letter_email" type="email" placeholder="Email" required>
                         </div>
                     </div> 
                     <div class="lugar">
                         <div class="caja_label">
                             <label class="nombre_etiqueta" for="ciudad">Ciudad *</label>
-                            <input class="formulario_input" id="ciudad" type="text" required placeholder="Ciudad">
+                            <input class="formulario_input" id="ciudad" type="text" placeholder="Ciudad" required>
                         </div>
                         <div class="caja_label">
                             <label class="nombre_etiqueta" for="pais">País *</label>
-                            <input class="formulario_input" id="pais" type="text" required placeholder="País">
+                            <input class="formulario_input" id="pais" type="text" placeholder="País" required>
                         </div>
                     </div> 
                     <div class="mi_carta"> 
                         <div class="caja_label">
                             <label class="nombre_etiqueta" for="carta">Carta para Papá Noél *</label>
-                            <textarea class="formulario_input_mi_carta" id="carta" required placeholder="Escribe tu carta"></textarea>
+                            <textarea class="formulario_input_mi_carta" id="carta" placeholder="Escribe tu carta" required></textarea>
                         </div>
                     </div> 
                     <div class="boton_enviar">
-                        <button class="formulario_submit" onclick="enviarCarta()">
+                        <button class="formulario_submit" type="submit">
                             Enviar
                         </button>
                     </div>
                 </form>
-           
-            </div>
-            <div id="popup-carta-exito" class="popup-carta hidden">
-                <div class="popup-carta-content">
-                    <span class="close-carta-popup">x</span>
-                    <p>¡Carta enviada con éxito! En breve recibirás una respuesta.</p>
-                </div>
-            </div>
-            <div id="popup-carta-registro" class="popup-carta hidden">
-                <div class="popup-carta-content">
-                    <span class="close-carta-popup">x</span>
-                    <p>Por favor, regístrate para poder enviar una carta a Santa.</p>
-                </div>
             </div>
         </div>
         <div id="videocall">
