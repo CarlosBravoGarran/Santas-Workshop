@@ -94,14 +94,28 @@ function addToList() {
     }
 
     const numeroAleatorio = Math.random();
-    if (numeroAleatorio > 0.5) {
-        goodList.push(nombre);
-        showNotification("Nombre agregado a la lista de buenos.", 'success');
+
+    if (goodList.includes(nombre)) {
+        showNotification("Este nombre ya está en la lista de los buenos.", 'success');
         showGoodList();
-    } else {
-        badList.push(nombre);
-        showNotification("Nombre agregado a la lista de traviesos.", 'success');
+        return;
+    } else if(badList.includes(nombre)) {
+        showNotification("Este nombre ya está en la lista de los traviesos.", 'error');
         showBadList();
+        showNotification("Tienes que portarte mejor para que te pongan en la lista de los buenos.", 'warning');
+        return;
+    } else {
+        if (numeroAleatorio > 0.5) {
+            goodList.push(nombre);
+            showNotification("Nombre agregado a la lista de buenos.", 'success');
+            showGoodList();
+        } else {
+            badList.push(nombre);
+            showNotification("Nombre agregado a la lista de traviesos.", 'error');
+            showBadList();
+            showNotification("Tienes que portarte mejor para que te pongan en la lista de los buenos.", 'warning');
+        
+        }
     }
 }
 

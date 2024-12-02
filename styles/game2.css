@@ -35,7 +35,7 @@
 
 
 .game2_word {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 2.2rem);
     margin: 10px;
 }
 
@@ -82,13 +82,14 @@
 .game2_start {
     width: 75%;
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 10px 10px;
     font-size: clamp(1rem, 1.8vw, 1.5rem);
     cursor: pointer;
     background-color: #4CAF50;
     border-radius: 5px;
     text-align: center;
     color: #fff;
+    overflow: hidden;
 }
 
 .game2_start:hover {
@@ -139,3 +140,37 @@
 .message-animate {
     animation: messageAnimation 2s ease-in-out forwards;
 }   
+
+@media screen and (max-width: 768px) {
+    
+    #game2 {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .game2_instructions {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .game2_main {
+        width: 80%;
+        height: 50%;
+    }
+
+    .game2_controls {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .game2_word{
+        width: 30%;
+    }
+
+    .game2_start {
+        width: 20%;
+        margin-bottom: 5px;
+        margin-right: 5px;
+    }
+}
