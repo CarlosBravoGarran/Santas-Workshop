@@ -1,7 +1,7 @@
 function generateElfName() {
     const nombre = document.getElementById("elf-name_input").value.trim();
     if (!nombre) {
-        alert("Por favor, escribe un nombre.");
+        showNotification("Por favor, escribe un nombre.", 'warning');
         return;
     }
     const sufijos = ["mir", "dor", "len", "sil", "thar", "wyn", "las", "rin", "dae", "ion"];
