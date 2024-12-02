@@ -16,5 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Enviar carta
-    enviarCartaButton?.addEventListener('click', enviarCarta);
+    enviarCartaButton?.addEventListener('submit', enviarCarta);
 });
