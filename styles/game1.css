@@ -59,7 +59,7 @@
 }
 
 #game1 {
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     height: 100%;
     padding: 20px;
@@ -74,6 +74,15 @@
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #000;
+}
+
+.game1_main {
+    display: flex;
+    gap: 20px;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .accessories {
@@ -96,7 +105,7 @@
 }
 
 .acc-img{
-    width: clamp(20px, 70%, 50px);
+    width: clamp(5px, 70%, 50px);
     height: 100%;
     object-fit: cover;
     cursor: pointer;
@@ -104,8 +113,8 @@
 
 .gingerbread {
     font-size: 5rem;
-    width: 30%;
-    background-color: #f3c674;
+    width: 50%;
+    background-color: #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,4 +136,26 @@
     font-size: 2rem;
     cursor: pointer;
     transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+    #game1 {
+        flex-direction: column;
+    }
+
+    .game1_instructions {
+        width: 100%;
+    }
+
+    .game1_main {
+        width: 100%;
+        height: 60%;
+    }
+    
+    .gingerbread {
+        width: auto;
+        max-height: 180px;
+        height: 80%;
+        margin: 20px 0;
+    }
 }
