@@ -4,27 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const enviarCarta = (event) => {
         event.preventDefault();
         
-        // Verificar si el usuario está logueado
+        // Verificar si el usuario ha iniciado sesión
         if (window.isUserLoggedIn()) {
-            // Mostrar el popup de éxito
-            document.getElementById("popup-carta-exito").classList.remove("hidden");
+            showNotification('Tu carta ha sido enviada con éxito. En breve recibirás una respuesta.', 'success');
         } else {
-            // Mostrar el popup de registro
-            document.getElementById("popup-carta-registro").classList.remove("hidden");
+            showNotification('Debes iniciar sesión para enviar una carta.', 'warning');
         }
+
+        // Limpiar formulario
+        document.querySelector('.formulario').reset();
     };
 
-    // Añadir el evento de clic al botón de enviar carta
+    // Enviar carta
     enviarCartaButton?.addEventListener('click', enviarCarta);
-
-    // Cerrar los popups cuando el usuario haga clic en el botón de cierre
-    document.querySelectorAll('.close-carta-popup').forEach(button => {
-        button.addEventListener('click', (event) => {
-            // Encontrar el popup padre y agregar la clase 'hidden' para cerrarlo
-            const popup = event.target.closest('.popup-carta');
-            if (popup) {
-                popup.classList.add('hidden');
-            }
-        });
-    });
 });
