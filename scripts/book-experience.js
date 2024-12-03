@@ -11,6 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const step3 = document.querySelector('.step3');
     const stepWizardSteps = document.querySelectorAll('.step-wizard_step');
 
+    // Buscar en local storage si el modo oscuro esta active
+    const modoOscuro = localStorage.getItem('modoOscuro');
+    if (modoOscuro === 'true') {
+        document.documentElement.style.setProperty('--color-text2', '#d4bfbf');
+        document.documentElement.style.setProperty('--color-background-global', '#251819');
+        document.documentElement.style.setProperty('--color-popup', '#3E2B2B');
+
+    } else {
+        // colores modo claro
+        document.documentElement.style.setProperty('--color-text2', '#F3F2F2');
+        document.documentElement.style.setProperty('--color-background-global', '#e7c47f');
+        document.documentElement.style.setProperty('--color-popup', '#e7d77ff9');
+    }
+            
     // Función para actualizar el progreso del wizard
     function updateWizard(currentStep) {
         stepWizardSteps.forEach((step, index) => {
