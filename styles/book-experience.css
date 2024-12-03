@@ -16,6 +16,7 @@
 .book_title {
     font-size: 2rem;
     text-align: center;
+    color: var(--color-text2);
 }
 
 /* Form Section */
@@ -23,13 +24,13 @@
     width: 70%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #e8f0fe;
+    background-color: var(--color-background-box);
     border-radius: 8px;
 }
 
 .book-form_title {
     font-size: 1.5rem;
-    color: var(--color-text2);
+    color: var(--color-text1);
 }
 
 .book-form_group {
@@ -47,7 +48,7 @@
     left: 10px;
     transform: translateY(-50%);
     font-size: 1rem;
-    color: #666;
+    color: var(--color-text1);
     pointer-events: none;
     transition: all 0.3s ease;
 }
@@ -64,6 +65,7 @@
     margin: 10px 0;
     outline: none;
     background-color: transparent;
+    color: var(--color-text1);
 }
 
 
@@ -73,7 +75,7 @@
     transform: translateY(20%);
     font-size: 0.8rem;
     padding-inline: 5px;
-    background-color: #e8f0fe;
+    background-color: transparent;
 }
 
 .book-date_label{
@@ -82,12 +84,12 @@
 }
 
 .book-date_input:focus + label, .book-date_input:valid + label {
-    color:#666 !important;
+    color:var(--color-text1) !important;
 }
 
 
 .book-form_group input:focus {
-    border-color: #5b84b1;
+    border-color: var(--color-background-box2);
     outline: none;
 }
 
@@ -96,7 +98,7 @@
     width: 50%;
     padding: 10px;
     background-color: var(--color-button1);
-    color: #fff;
+    color: var(--color-text1);
     font-size: 1rem;
     font-weight: bold;
     border: none;
@@ -107,12 +109,12 @@
 }
 
 .book_btn:hover {
-    background-color: #4169a3;
+    background-color: var(--color-button2);
 }
 
 
 .book_price{
-    color: #000;
+    color: var(--color-text1);
 }
 
 
@@ -122,13 +124,13 @@
     width: 70%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f9eae1;
+    background-color: var(--color-background-box);
     border-radius: 8px;
 }
 
 .book_payment-title {
     font-size: 1.5rem;
-    color: var(--color-text2);
+    color: var(--color-text1);
 }
 
 .book_payment-method {
@@ -142,7 +144,7 @@
 
 .book_payment-method label {
     font-size: 1.2rem;
-    color: #555;
+    color: var(--color-text1);
     cursor: pointer;;
 }
 
@@ -150,7 +152,7 @@
     width: 70%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--color-text1);
     border-radius: 8px;
     display: none;
 }
@@ -174,7 +176,7 @@
     left: 10px;
     transform: translateY(-50%);
     font-size: 1rem;
-    color: #666;
+    color: var(--color-text2);
     pointer-events: none;
     transition: all 0.3s ease;
 }
@@ -197,7 +199,7 @@
     transform: translateY(20%);
     font-size: 0.8rem;
     padding-inline: 5px;
-    background-color: #fff;
+    background-color: var(--color-text1);
 }
 
 .expiry_label{
@@ -205,11 +207,11 @@
 }
 
 .expiry_input:focus + label, .expiry_input:valid + label {
-    color:#666 !important;
+    color:var(--color-text1) !important;
 }
 
 .payment-form_group input:focus {
-    border-color: #db5a42;
+    border-color: var(--color-button2);
     outline: none;
 }
 
@@ -229,7 +231,7 @@
     width: 70%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--color-text1);
     border-radius: 8px;
     display: none;
 }
@@ -253,7 +255,7 @@
     left: 10px;
     transform: translateY(-50%);
     font-size: 1rem;
-    color: #666;
+    color: var(--color-text1);
     pointer-events: none;
     transition: all 0.3s ease;
 }
@@ -276,11 +278,11 @@
     transform: translateY(20%);
     font-size: 0.8rem;
     padding-inline: 5px;
-    background-color: #fff;
+    background-color: var(--color-text1);
 }
 
 .paypal-form_group input:focus {
-    border-color: #db5a42;
+    border-color: var(--color-button2);
     outline: none;
 }
 
@@ -295,7 +297,7 @@
     width: 30%;
     padding: 10px;
     background-color: var(--color-button1);
-    color: #fff;
+    color: var(--color-text1);
     font-size: 1rem;
     font-weight: bold;
     border: none;
@@ -309,7 +311,7 @@
     width: 30%;
     padding: 10px;
     background-color: var(--color-button2);
-    color: #fff;
+    color: var(--color-text1);
     font-size: 1rem;
     font-weight: bold;
     border: none;
@@ -323,20 +325,22 @@
     width: 70%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #e7ffe6;
+    background-color: var(--color-background-box);
     border-radius: 8px;
     color: var(--color-text2)
 }
 
+
 .book_confirm-title {
     font-size: 1.5rem;
-    color: var(--color-text2);
+    color: var(--color-text1);
 }
 
 .book_confirm-info p {
     margin: 10px 0;
     font-size: 1.1rem;
     line-height: 1.4;
+    color: var(--color-text1)
 }
 
 .book_confirm-info span {
@@ -354,7 +358,7 @@
     width: 30%;
     padding: 10px;
     background-color: var(--color-button2);
-    color: #fff;
+    color: var(--color-text1);
     font-size: 1rem;
     font-weight: bold;
     border: none;
@@ -368,7 +372,7 @@
     width: 30%;
     padding: 10px;
     background-color: var(--color-button1);
-    color: #fff;
+    color: var(--color-text1);
     font-size: 1rem;
     font-weight: bold;
     border: none;
