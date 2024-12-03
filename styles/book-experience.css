@@ -180,10 +180,11 @@
     cursor: pointer;
     transition: background 0.3s ease;
     margin: auto;
+    box-shadow: 4px 4px 1px #000;
 }
 
-.book_btn:hover {
-    background-color: var(--color-button2);
+.book_btn:active {
+    box-shadow: inset 4px 4px 1px #000;
 }
 
 
@@ -379,6 +380,11 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease;
+    box-shadow: 4px 4px 1px #000;
+}
+
+.book-payment_btn:active {
+    box-shadow: inset 4px 4px 1px #000;
 }
 
 .book-payment_back {
@@ -393,6 +399,11 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease;
+    box-shadow: 4px 4px 1px #000;
+}
+
+.book-payment_back:active {
+    box-shadow: inset 4px 4px 1px #000;
 }
 
 /* Confirmation Section */
@@ -440,6 +451,11 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease;
+    box-shadow: 4px 4px 1px #000;
+}
+
+.book-confirm_back:active {
+    box-shadow: inset 4px 4px 1px #000;
 }
 
 .book-confirm_btn{
@@ -454,4 +470,9 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease;
+    box-shadow: 4px 4px 1px #000;
+}
+
+.book-confirm_btn:active {
+    box-shadow: inset 4px 4px 1px #000;
 }

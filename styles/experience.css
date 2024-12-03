@@ -63,10 +63,14 @@
     background-color: var(--color-button1);
     color: var(--color-text1);
     cursor: pointer;
-    box-shadow: 4px 4px 1px rgba(0, 0, 0);
+    box-shadow: 4px 4px 1px #000;
     border-radius: 8px;
     border: 1px solid #000;
     transition: all 0.2s ease-in-out;
+}
+
+.experience_registration_button:active{
+    box-shadow: inset 4px 4px 1px #000;
 }
 
 .imagen_laponia{

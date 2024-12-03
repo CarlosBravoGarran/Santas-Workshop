@@ -20,6 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Abrir el popup de la cámara y activar la cámara
     openCameraBtn.addEventListener('click', async () => {
         try {
+
+            if(!isUserLoggedIn()) {
+                showNotification('Debe iniciar sesión para utilizar esta funcionalidad.', 'warning');
+                return; 
+            }
+
             cameraPopup.style.display = 'flex';
             darkOverlay.style.display = 'block';
 
