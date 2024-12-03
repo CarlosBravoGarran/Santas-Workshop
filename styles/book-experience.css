@@ -2,12 +2,11 @@
 
 
 .step-container {
-    height: 80vh;
+    height: 70vh;
     align-items: center;
     justify-content: center;
     display: flex;
-    margin: 0px auto;
-    margin-top:0;
+    margin: 10px auto;
 }
 
 .step2, .step3 {
@@ -88,8 +87,9 @@
 
 
 .book_title {
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-align: center;
+    margin: 20px auto;
     color: var(--color-text2);
 }
 
