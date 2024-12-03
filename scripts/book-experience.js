@@ -1,9 +1,7 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('.book-form'); 
+    const form = document.querySelector('.book-form');
     const totalPriceElement = document.querySelector('.book_price span');
     const pricePerPerson = 239; // Precio por persona
-    const bookBtn = document.querySelector('.book_btn');
     const payBackBtn = document.querySelector('.book-payment_back');
     const payBtn = document.querySelector('.book-payment_btn');
     const confBtn = document.querySelector('.book-confirm_btn');
@@ -11,11 +9,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const step1 = document.querySelector('.step1');
     const step2 = document.querySelector('.step2');
     const step3 = document.querySelector('.step3');
+    const stepWizardSteps = document.querySelectorAll('.step-wizard_step');
 
+    // Función para actualizar el progreso del wizard
+    function updateWizard(currentStep) {
+        stepWizardSteps.forEach((step, index) => {
+            if (index < currentStep) {
+                step.classList.add('active'); // Marcar como completado
+            } else {
+                step.classList.remove('active'); // Desmarcar
+            }
+        });
+    }
+
+    // Fecha mínima reserva
+    const dateInput = document.getElementById('book_date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
 
     // Calcular el precio total en función del número de personas
     form.book_people.addEventListener('input', (event) => {
-        const numberOfPeople = parseInt(event.target.value, 10) || 0; 
+        const numberOfPeople = parseInt(event.target.value, 10) || 0;
         const totalPrice = numberOfPeople * pricePerPerson;
         totalPriceElement.textContent = totalPrice;
     });
@@ -42,27 +56,30 @@ document.addEventListener('DOMContentLoaded', () => {
         // Cambiar de paso
         step1.style.display = 'none';
         step2.style.display = 'flex';
+
+        updateWizard(1); // Actualizar wizard al paso 2
     });
 
     payBackBtn.addEventListener('click', () => {
         step2.style.display = 'none';
         step1.style.display = 'flex';
-    });
 
+        updateWizard(0); // Volver al paso 1
+    });
 
     const paypalOption = document.getElementById('book_payment-paypal');
     const cardOption = document.getElementById('book_payment-card');
     const paypalForm = document.querySelector('.paypal-payment');
     const cardForm = document.querySelector('.card-payment');
 
-    //Mostrar/ocultar formularios según la opción 
+    // Mostrar/ocultar formularios según la opción
     function togglePaymentForms() {
         if (paypalOption.checked) {
             paypalForm.style.display = 'block';
             cardForm.style.display = 'none';
         } else if (cardOption.checked) {
             cardForm.style.display = 'block';
-            paypalForm.style.display = 'none'; 
+            paypalForm.style.display = 'none';
         }
     }
 
@@ -75,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     payBtn.addEventListener('click', (event) => {
         event.preventDefault();
 
-
         const email = document.getElementById('paypal_email').value;
         const password = document.getElementById('paypal_password').value;
         const cardNumber = document.getElementById('card_number').value;
@@ -83,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardDate = document.getElementById('card_expiry').value;
         const cardCvv = document.getElementById('card_cvv').value;
 
-        if(!paypalOption.checked && !cardOption.checked) {
+        if (!paypalOption.checked && !cardOption.checked) {
             showNotification('Por favor, selecciona un método de pago', 'error');
             return;
         }
@@ -98,21 +114,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 showNotification('Por favor, rellena todos los campos', 'error');
                 return;
             }
-        }        
+        }
+
         step2.style.display = 'none';
         step3.style.display = 'flex';
+
+        updateWizard(2); // Actualizar wizard al paso 3
     });
 
-    // Confirmar 
+    // Confirmar
     confBtn.addEventListener('click', () => {
         showNotification('Reserva confirmada. Recibirás un email con los detalles de la reserva.', 'success');
+        confBackBtn.style.display = 'none';
+        updateWizard(3); // Actualizar wizard final
     });
 
     confBackBtn.addEventListener('click', () => {
         step3.style.display = 'none';
         step2.style.display = 'flex';
+
+        updateWizard(1); // Volver al paso 2
     });
-
-
-
 });

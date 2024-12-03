@@ -2,16 +2,90 @@
 
 
 .step-container {
-    height: 90vh;
+    height: 80vh;
     align-items: center;
     justify-content: center;
     display: flex;
-    margin: auto;
+    margin: 0px auto;
+    margin-top:0;
 }
 
 .step2, .step3 {
     display: none;
 }
+
+.step-wizard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto;
+    margin-bottom: 0;
+    padding: 10px 0;
+    width: 80%;
+    position: relative;
+}
+
+.step-wizard_step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    flex: 1;
+}
+
+.step-wizard_icon {
+    width: 40px;
+    height: 40px;
+    background-color: #e0e0e0;
+    border: 2px solid #d0d0d0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.step-wizard_title {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+.step-wizard_step.active .step-wizard_icon {
+    background-color: #5b84b1; /* Color activo */
+    border-color: #5b84b1;
+    color: #fff;
+}
+
+.step-wizard_step.active .step-wizard_title {
+    color: #5b84b1; /* Color activo */
+}
+
+
+
+.step-wizard_step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    right: -50%;
+    height: 2px;
+    background-color: #5b84b1;
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+.step-wizard_step.active ~ .step-wizard_step::after {
+    background-color: #5b84b1;
+}
+
 
 .book_title {
     font-size: 2rem;
@@ -22,7 +96,7 @@
 /* Form Section */
 .book-form_container {
     width: 70%;
-    margin: 20px auto;
+    margin: 0px auto;
     padding: 20px;
     background-color: var(--color-background-box);
     border-radius: 8px;
@@ -62,7 +136,7 @@
     border-left: 0;
     border-right: 0;
     font-size: clamp(0.7rem, 1.1vw, 1rem);
-    margin: 10px 0;
+    margin: 7px 0;
     outline: none;
     background-color: transparent;
     color: var(--color-text1);
@@ -115,6 +189,7 @@
 
 .book_price{
     color: var(--color-text1);
+    margin: 0;
 }
 
 
