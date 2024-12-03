@@ -86,7 +86,7 @@
     font-size: 14px;
     cursor: pointer;
     background-color: var(--color-button3);
-    color: #fff;
+    color: var(--color-text2);
     border-radius: 5px;
     box-shadow: 4px 4px 1px #4c9c68;
 }

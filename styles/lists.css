@@ -62,7 +62,7 @@
     border: 1px solid var(--color-background-box);
     border-radius: 5px;
     background-color: var(--color-button1);
-    color: var(--color-text1);
+    color: var(--color-text2);
     cursor: pointer;
     box-shadow: 4px 4px 1px rgba(0, 0, 0);
     border-radius: 8px;
@@ -134,7 +134,7 @@
     border: 1px solid var(--color-background-box);
     border-radius: 5px;
     background-color: var(--color-button1);
-    color: var(--color-text1);
+    color: var(--color-text2);
     cursor: pointer;
     box-shadow: 4px 4px 1px rgba(0, 0, 0);
     border-radius: 8px;
@@ -151,7 +151,7 @@
     border: 1px solid var(--color-background-box);
     border-radius: 5px;
     background-color: var(--color-button2);
-    color: var(--color-text1);
+    color: var(--color-text2);
     cursor: pointer;
     box-shadow: 4px 4px 1px rgba(0, 0, 0);
     border-radius: 8px;
