@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     } else {
         // colores modo claro
-        document.documentElement.style.setProperty('--color-text2', '#F3F2F2');
+        document.documentElement.style.setProperty('--color-text2', '#2F2223');
         document.documentElement.style.setProperty('--color-background-global', '#e7c47f');
         document.documentElement.style.setProperty('--color-popup', '#e7d77ff9');
     }
