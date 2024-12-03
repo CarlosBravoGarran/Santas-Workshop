@@ -583,16 +583,26 @@
 
 .nav-bar_modo-oscuro{
     position: fixed; 
-    top: 30px; 
+    top: 8px; 
     right: 70px; 
     z-index: 10;  
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 600px) {
     .nav-bar_modo-oscuro {
-        top: 40px;
+        top: 17px;
     }
     
+}
+.modo-oscuro_icon{
+    display: inline-block;
+    width: 50px;
+    height: 32px;
+    background-color: none;
+    border-radius: 25px;
+    position: relative;
 }
 
 .switch {
@@ -601,7 +611,7 @@
     height: 25px;
     background-color: #ccc;
     border-radius: 25px;
-    position: relative; /
+    position: relative; 
 }
 
 .switch input {
