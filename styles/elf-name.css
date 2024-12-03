@@ -16,6 +16,23 @@
     z-index: 2;
 }
 
+@media screen and (max-width: 1000px) {
+    .elf-name_image{
+        transform: translateX(200px)translateY(-480px);
+        width: 10%;
+        height: 10%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .elf-name_image{
+        transform: translateX(150px)translateY(-480px);
+        width: 10%;
+        height: 10%;
+    }
+    
+}
+
 .elf-name_info{
     position: relative;
     width: 60%;
@@ -39,6 +56,13 @@
     text-align: center;
     gap: 80px;
 }
+
+@media screen and (max-width: 1000px) {
+    .elf-name_input-output{
+        flex-direction: column;
+    }
+}
+
 .elf-name_form{
     display: flex;
     flex-direction: column;

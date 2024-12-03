@@ -18,6 +18,12 @@
     border-radius: 20px;
 }
 
+@media screen and (max-width: 1000px) {
+    .experience_content{
+        flex-direction: column;
+        justify-content: center;
+    }  
+}
 .experience_registration{
     width: 80%;
     height: 60%;
