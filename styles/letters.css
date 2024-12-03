@@ -34,7 +34,7 @@
 
 @media screen and (max-width:600px){
     .sello-image{    
-        transform: translateX(200px) translateY(-250px);
+        transform: translateX(110px) translateY(-250px);
     }
 }
 
