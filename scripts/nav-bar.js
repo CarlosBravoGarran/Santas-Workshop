@@ -157,11 +157,16 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.style.setProperty('--color-text2', '#d4bfbf');
             document.documentElement.style.setProperty('--color-background-global', '#251819');
             document.documentElement.style.setProperty('--color-popup', '#3E2B2B');
+            //añadir a local storage una seccion de modo oscuro activado
+            localStorage.setItem('modoOscuro', 'true');
+
         } else {
             // colores modo claro
             document.documentElement.style.setProperty('--color-text2', '#F3F2F2');
             document.documentElement.style.setProperty('--color-background-global', '#e7c47f');
             document.documentElement.style.setProperty('--color-popup', '#e7d77ff9');
+            //añadir a local storage una seccion de modo oscuro desactivado
+            localStorage.removeItem('modoOscuro');
         }
     });
     
