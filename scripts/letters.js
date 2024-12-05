@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartaSanta = document.querySelector('.carta_santa');
 
     const mostrarSobre = (nombre, ciudad, pais) => {
+        showNotification('')
         cartaSanta.style.display = 'block'; 
         cartaSanta.addEventListener('click', () => mostrarCarta(nombre, ciudad, pais));
     };

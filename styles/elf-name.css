@@ -9,16 +9,17 @@
 
 .elf-name_image{
     position:absolute;
-    transform: translateX(300px)translateY(-260px);
+    transform: translateX(200%)translateY(-170%);
     width: 10%;
     max-width: 70%;
+    min-width: 50px;
     height: 20%;
     z-index: 2;
 }
 
 @media screen and (max-width: 1000px) {
     .elf-name_image{
-        transform: translateX(200px)translateY(-480px);
+        transform: translateX(200%)translateY(-350%);
         width: 10%;
         height: 10%;
     }
@@ -26,7 +27,6 @@
 
 @media screen and (max-width: 600px) {
     .elf-name_image{
-        transform: translateX(150px)translateY(-480px);
         width: 10%;
         height: 10%;
     }
@@ -116,6 +116,6 @@
     font-family: 'Elf';
     color: var(--color-cursor);
     margin-top: 15px;
-    font-size: 5rem;
+    font-size: clamp(1.5rem, 6vw, 5rem);
     margin-bottom: 0;
 }
