@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Validar la contraseña
-        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
         if (!passwordRegex.test(password)) {
-            showNotification('La contraseña debe tener al menos 8 caracteres, una letra y un número.', 'error');
+            showNotification('La contraseña debe tener al menos 8 caracteres, una letra, un número y un caracter especial.', 'error');
             return;
         }
 
