@@ -1,7 +1,14 @@
 
+.book-steps{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
 
+}
 
 .step-container {
+    width: 100%;
     height: 70vh;
     align-items: center;
     justify-content: center;
@@ -17,11 +24,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0px auto;
+    margin: 10px auto;
     margin-bottom: 0;
     padding: 10px 0;
     width: 80%;
-    position: relative;
 }
 
 .step-wizard_step {
@@ -252,7 +258,7 @@
     left: 10px;
     transform: translateY(-50%);
     font-size: 1rem;
-    color: var(--color-text2);
+    color: #2F2223;
     pointer-events: none;
     transition: all 0.3s ease;
 }

@@ -152,6 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('modoOscuroSwitch').addEventListener('change', function() {
+        localStorage.setItem('modoOscuro', 'false');
         if (this.checked) {
             // colores modo oscuro
             document.documentElement.style.setProperty('--color-text2', '#d4bfbf');
