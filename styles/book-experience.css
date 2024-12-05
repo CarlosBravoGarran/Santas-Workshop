@@ -258,7 +258,7 @@
     left: 10px;
     transform: translateY(-50%);
     font-size: 1rem;
-    color: var(--color-text2);
+    color: #2F2223;
     pointer-events: none;
     transition: all 0.3s ease;
 }
