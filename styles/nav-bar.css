@@ -612,7 +612,9 @@
     background-color: #ccc;
     border-radius: 25px;
     position: relative; 
+    color: transparent;
 }
+
 
 .switch input {
     opacity: 0;
