@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Crea el icono de Santa Claus
     const santaIcon = L.icon({
-        iconUrl: 'images/icon.png',
+        iconUrl: 'images/icon.webp',
         iconSize: [50, 50],
         iconAnchor: [25, 25],
     });
