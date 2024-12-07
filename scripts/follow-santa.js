@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Intervalo para mover a Santa Claus
     setInterval(() => {
-        const newCoords = getRandomCoordinates(); // Genera nuevas coordenadas dentro de los límites
-        santaMarker.setLatLng(newCoords); // Actualiza la posición del marcador
+        const newCoords = getRandomCoordinates();
+        santaMarker.setLatLng(newCoords);
     }, 10000);
 
     // Función para calcular distancia usando Haversine
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return null;
         }
 
-        const { lat, lon } = data[0]; // Toma las coordenadas del primer resultado
+        const { lat, lon } = data[0];
         return { lat: parseFloat(lat), lng: parseFloat(lon) };
     }
 
