@@ -42,14 +42,17 @@
 
 .politica_privacidad{
     color: black;
+    cursor: pointer;
 }
 
 .politica_privacidad:hover{
     color: var(--color-text1);
+    cursor: pointer;
 }
 
 .icono{
     width:10%;
+    cursor: pointer;
 }
 
 .help-button {
