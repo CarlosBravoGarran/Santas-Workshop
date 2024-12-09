@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let stream; // Guardar el stream de la cámara
 
-    // Función para dibujar un círculo guía en el canvas
+    // Dibujar círculo guía en el canvas
     function drawGuideCircle(canvas) {
         const ctx = canvas.getContext('2d');
         const centerX = canvas.width / 2;
@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Radio proporcional al tamaño del canvas
         const radius = Math.min(canvas.width, canvas.height) / 4;
 
-        // Dibujar el círculo
         ctx.beginPath();
         ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Función para verificar si el canvas está vacío
+    // Verificar si el canvas está vacío
     function isCanvasEmpty(canvas) {
         const ctx = canvas.getContext('2d');
         const pixelData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 video: { facingMode: 'user' }, // Cámara frontal
             });
             cameraFeed.srcObject = stream;
-            cameraFeed.play(); // Reproducir video
+            cameraFeed.play();
 
 
             // Deshabilitar el botón de guardar si el canvas está vacío
@@ -62,20 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Tomar foto
-    // Tomar foto
     captureBtn.addEventListener('click', () => {
         const ctx = popupCanvas.getContext('2d');
 
         popupCanvas.width = cameraFeed.videoWidth;
         popupCanvas.height = cameraFeed.videoHeight;
 
-        // Dibujar la imagen de la cámara invertida horizontalmente
+        // Dibujar la imagen de la cámara  
         ctx.translate(popupCanvas.width, 0);
         ctx.scale(-1, 1); // Invertir horizontalmente
         ctx.drawImage(cameraFeed, 0, 0, popupCanvas.width, popupCanvas.height);
-        ctx.setTransform(1, 0, 0, 1, 0, 0); // Restablecer transformación
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
 
-        // Dibujar el círculo guía sobre el canvas
+        // Dibujar el círculo guía
         drawGuideCircle(popupCanvas);
 
         // Habilitar el botón de guardar si el canvas no está vacío

@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         santaMarker.setLatLng(newCoords);
     }, 10000);
 
-    // Función para calcular distancia usando Haversine
+    // Función para calcular distancia
     function calculateDistance(lat1, lng1, lat2, lng2) {
         const toRadians = (degree) => (degree * Math.PI) / 180;
         const R = 6371; // Radio de la Tierra en km
