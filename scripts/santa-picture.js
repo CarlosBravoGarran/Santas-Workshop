@@ -93,25 +93,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Superponer el filtro
         const overlay = new Image();
+        overlay.crossOrigin = 'anonymous';
         overlay.src = './images/selfie_elf.webp';
         overlay.onload = () => {
             ctx.drawImage(
                 overlay,
-                cameraCanvas.width * 0, // Posición X
-                cameraCanvas.height * 0, // Posición Y
-                cameraCanvas.width * 1, // Ancho
-                cameraCanvas.height * 1 // Alto
+                0, // Posición X
+                0, // Posición Y
+                cameraCanvas.width, // Ancho
+                cameraCanvas.height // Alto
             );
 
             // Convertir el canvas a una imagen
             const img = document.createElement('img');
-            img.src = cameraCanvas.toDataURL('image/png');
-            img.style.width = '100%';
-            img.style.height = '100%';
+            try {
+                img.src = cameraCanvas.toDataURL('image/png');
+                img.style.width = '100%';
+                img.style.height = '100%';
 
-            // Agregar la imagen al contenedor final
-            photoContainer.innerHTML = '';
-            photoContainer.appendChild(img);
+                // Agregar la imagen al contenedor final
+                photoContainer.innerHTML = '';
+                photoContainer.appendChild(img);
+            } catch (error) {
+                console.error('Error al exportar el canvas:', error);
+            }
 
             // Detener la cámara y cerrar el popup
             stream.getTracks().forEach((track) => track.stop());
@@ -119,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             darkOverlay.style.display = 'none';
         };
     });
+
 
     // Cerrar el popup al hacer clic fuera de él
     document.addEventListener('click', (event) => {
