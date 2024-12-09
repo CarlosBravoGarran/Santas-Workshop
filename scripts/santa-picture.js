@@ -10,6 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let stream; // Guardar el stream de la cámara
 
+    // Función para dibujar un círculo guía en el canvas
+    function drawGuideCircle(canvas) {
+        const ctx = canvas.getContext('2d');
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        // Radio proporcional al tamaño del canvas
+        const radius = Math.min(canvas.width, canvas.height) / 4;
+
+        // Dibujar el círculo
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.lineWidth = 4;
+        ctx.stroke();
+    }
+
+
     // Función para verificar si el canvas está vacío
     function isCanvasEmpty(canvas) {
         const ctx = canvas.getContext('2d');
@@ -44,18 +62,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Tomar foto
+    // Tomar foto
     captureBtn.addEventListener('click', () => {
         const ctx = popupCanvas.getContext('2d');
 
         popupCanvas.width = cameraFeed.videoWidth;
         popupCanvas.height = cameraFeed.videoHeight;
 
+        // Dibujar la imagen de la cámara invertida horizontalmente
         ctx.translate(popupCanvas.width, 0);
         ctx.scale(-1, 1); // Invertir horizontalmente
         ctx.drawImage(cameraFeed, 0, 0, popupCanvas.width, popupCanvas.height);
         ctx.setTransform(1, 0, 0, 1, 0, 0); // Restablecer transformación
 
-        // Habilitar el botón de guardar
+        // Dibujar el círculo guía sobre el canvas
+        drawGuideCircle(popupCanvas);
+
+        // Habilitar el botón de guardar si el canvas no está vacío
         savePhotoBtn.disabled = isCanvasEmpty(popupCanvas);
     });
 
