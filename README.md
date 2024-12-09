@@ -1,15 +1,12 @@
 # README: Santa's Workshop Web Platform
 
----
-
-## Project Overview
+## Web Overview
 Santa's Workshop is an interactive, festive web platform designed to immerse users in the magic of Christmas. From writing letters to Santa to tracking his journey across the globe, the platform offers a comprehensive holiday experience for users of all ages. 
 
 The project emphasizes a clean, minimalistic design with a focus on usability, accessibility, and multi-platform compatibility, ensuring a seamless experience across devices.
 
----
 
-## Key Features
+### Key Features
 
 1. **Interactive Christmas Activities**
    - **Write Letters to Santa**: Users can compose letters and receive personalized responses.
@@ -38,9 +35,8 @@ The project emphasizes a clean, minimalistic design with a focus on usability, a
    - Hover-enabled navigation elements like stars guiding users to different sections.
    - Real-time feedback on user actions through notifications and animations.
 
----
 
-## Technologies Used
+### Technologies Used
 - **Frontend**: HTML, CSS, JavaScript
 - **Libraries and APIs**:
   - Leaflet.js, OpenStreetMap and FetchApi for interactive maps.
@@ -50,13 +46,17 @@ The project emphasizes a clean, minimalistic design with a focus on usability, a
 - **Dynamic Elements**: Real-time DOM manipulation using JavaScript
 - **Styling**: Fully responsive design optimized for desktop and mobile platforms.
 
----
 
 ### Accessibility
 - Alternative text for all images.
 - Text-to-speech subtitles for video calls.
 - High-contrast colors and alternate text for all images.
 - Keyboard navigable elements for enhanced usability.
+
+### Future Improvements
+- Fully functional experience reservation and payment integration.
+- Expansion of the games section with more interactive elements.
+- Multi-language support for a global audience.
 
 ---
 
@@ -73,11 +73,8 @@ The project emphasizes a clean, minimalistic design with a focus on usability, a
 
 ---
 
-## Future Improvements
-- Fully functional experience reservation and payment integration.
-- Expansion of the games section with more interactive elements.
-- Multi-language support for a global audience.
+- **Carlos Bravo Garrán** - [GitHub](https://github.com/CarlosBravoGarran)
+- **Luis Gandarillas Fernández** - [GitHub](https://github.com/lgandarillas)
+- **Olivia Grima Perez** - [GitHub](https://github.com/100474858)
+- **Íñigo García-Velasco Gonzalez** - [GitHub](https://github.com/100461095)
 
----
-
-Happy Holidays! 🎅
