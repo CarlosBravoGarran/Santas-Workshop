@@ -1,4 +1,4 @@
-# README: Santa's Workshop Web
+# Santa's Workshop Web
 
 ## Web Overview
 Santa's Workshop is an interactive, festive web platform designed to immerse users in the magic of Christmas. From writing letters to Santa to tracking his journey across the globe, the platform offers a comprehensive holiday experience for users of all ages. 
